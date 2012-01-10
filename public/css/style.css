@@ -36,7 +36,7 @@ a:hover{cursor:pointer;}
 .middle table{padding-left:20px;}
 .middle table tr td{padding:3px 10px 3px 0px;}
 .middle table tr td{vertical-align:top;text-align:justify;}
-.middle .attention{text-align:center;padding-left:60px;padding-right:60px;font-style:italic;}
+.middle blockquote{text-align:justify;padding:0px 80px;font-style:italic;}
 .middle .highlight pre{padding:10px;margin:20px;background:#111111;font-size:15px;color:white;overflow:hidden;}
 #leave-a-comment{width:700px;margin:auto;}#leave-a-comment label,#leave-a-comment input,#leave-a-comment textarea{display:block;padding:2px;}
 #leave-a-comment input,#leave-a-comment textarea{margin-left:25px;width:685px;}
