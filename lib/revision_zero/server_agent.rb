@@ -22,7 +22,7 @@ module RevisionZero
         Bundler::with_original_env do
           Dir.chdir(ROOT) do
             logger.debug "Executing bundle install"
-            logger.debug `bundle install --without=development --deployment --local`
+            logger.debug `bundle install --deployment`
             `touch tmp/restart.txt`
           end
         end
