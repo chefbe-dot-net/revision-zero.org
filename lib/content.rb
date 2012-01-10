@@ -106,7 +106,7 @@ class Content
     when ".yml", ".yaml"
       YAML.load(path.read)
     when ".md"
-      blocks = path.read.split("---\n")
+      blocks = path.read.split(/---\s*\r?\n/)
       text   = blocks.pop
       data   = YAML.load(blocks.join("---\n"))
       data   = {} unless data

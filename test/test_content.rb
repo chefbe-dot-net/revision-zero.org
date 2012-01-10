@@ -53,5 +53,11 @@ class ContentTest < Case
       "__url__"  => "with_index_yml/say-hello" }
     assert_equal h, content.to_h
   end
+  
+  def test_it_splits_md_files_correctly
+    content = (@fixtures/"without_index"/"hello.md").to_h
+    assert_equal "Welcome!", content["title"]
+    assert_match /^Welcome to/, content["text"]
+  end
 
 end
