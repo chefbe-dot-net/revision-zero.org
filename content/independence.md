@@ -57,7 +57,7 @@ An important source of change is _input change_ (related to <u>requirements</u> 
 
 In my opinion, the nature of computer science and the best pattern for software <u>evolution</u>. Unfortunately, this pattern is also the most difficult to use the right way and the most dangerous: abstracting too much definitely kills your software! Abstracting is difficult to define... let start with the @{http://en.wikipedia.org/wiki/Abstraction}{wikipedia definition of _abstraction_}:
 
-bq. Abstraction is the process or result of generalization by reducing the information content of a concept or an observable phenomenon, typically to retain only information which is relevant for a particular purpose.
+> Abstraction is the process or result of generalization by reducing the information content of a concept or an observable phenomenon, typically to retain only information which is relevant for a particular purpose.
 
 The last part of this sentence is worth reading! Let me discuss the @{book#how}{example of blog's links}. From the point of view of the blog sources (the format I use for writing these papers), a link is a pair: _identifier_ of a target location and _label_ to render:
 

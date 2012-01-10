@@ -26,8 +26,7 @@ The definitions above make use of specific terms that I would like to discuss no
 
 Managing data certainly means being able to reason in terms of types, values, and (to a lesser extent) variables. Those concepts may seem obvious to you... great! However, it does not seem that obvious in object-oriented programming languages such as ruby, so I'd like to discuss them in more details.
 
-> A *type* is a set of elements, called values. We say that a value 
-> belongs to a type, if it is one of its elements.
+> A *type* is a set of elements, called values. We say that a value belongs to a type, if it is one of its elements.
 > 
 > Values are immutable (you can't modify the integer value '3', in any way). 
 > They can be of any complexity (sounds and videos can be seen as values, for instance). 
@@ -73,7 +72,7 @@ So, an example of relation might be:
 
 I've chosen a particular functional syntax here, which is compatible with ruby. This is not crucial, even if I have made it on purpose (see below). The example shows a relation that relates (sic) URIs and years with the following intended semantics: 
 
-> (According to whois,) the domain name of the website `:address` <br/>has been registered in year `:since`
+> (According to whois,) the domain name of the website `:address` has been registered in year `:since`
 
 The following observations can be made on this example:
 

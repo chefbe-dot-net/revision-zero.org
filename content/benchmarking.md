@@ -66,7 +66,7 @@ The assertion is trivially true as well as the test, and the benchmarking approa
 
 Unfortunately if you want to go deeper in your understanding, things get more complicated. The truth is that answering whether the benchmarking is wrong or not depends on what you want to assert precisely. In this respect, the example at hand is amazing because:
 
-> it proves (or at least asserts) a lot of things, but *certainly not* that `fib` has a linear execution time (even if it does)
+> It proves (or at least asserts) a lot of things, but *certainly not* that `fib` has a linear execution time (even if it does)
 
 If you do not trust me, modify `fib` as below. The modified implementation (does not compute a fibonacci number anymore and) presents an exponential execution time with respect to `n`.
 

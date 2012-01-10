@@ -44,7 +44,7 @@ First of all: if you want to learn more, read the @{http://en.wikipedia.org/wiki
 
 Assume this time that your application allows a user to display the list of its recent buying. For this, many developers build SQL queries by string concatenations. The JAVA code excerpt below provides a typical example:
 
-#<{java}{
+`#<{java}{
 String buyerName = ...                  // some buyer name received previously
 Connection c = ...                      // get a JDBC connection
 String sql = "SELECT * FROM buying " +

@@ -15,11 +15,11 @@ With colleagues we have a somewhat recurrent discussion about _software reuse_. 
 
 The concept of _software reuse_ is not new and many writings already exist about it. Probably the better I've read so far is a review due to Charles W. Krueger published in 1992 and simply entitled _Software Reuse_[1]. The abstract starts with the following paragraph:
 
-bq. Software reuse is the process of creating software systems from existing software rather than building software systems from scratch. This simple yet powerful vision was introduced in 1968 (ed. in [2]). Software reuse has, however, failed to become a standard software engineering practice. In an attempt to understand why, researchers have renewed their interest in software reuse and in the obstacles to implementing it. 
+> Software reuse is the process of creating software systems from existing software rather than building software systems from scratch. This simple yet powerful vision was introduced in 1968 (ed. in [2]). Software reuse has, however, failed to become a standard software engineering practice. In an attempt to understand why, researchers have renewed their interest in software reuse and in the obstacles to implementing it. 
 
 The paper is actually a survey of the research efforts at that time about _reuse techniques_. The techniques discussed are (I will briefly discuss each of them a bit later): 
 
-bq. _high-level languages_, _source code components_, _software architectures_, _design and code scavenging_, _application generators_, _transformational systems_, _very high-level languages_ and _software schemas_.
+> _High-level languages_, _source code components_, _software architectures_, _design and code scavenging_, _application generators_, _transformational systems_, _very high-level languages_ and _software schemas_.
 
 Each technique is more fully described in the body of the paper (a section of 2 to 3 pages each). There, they are  classified along four main dimensions:
 
@@ -30,8 +30,8 @@ Each technique is more fully described in the body of the paper (a section of 2 
 
 The paper also aims at _evaluating_ the effectiveness of the reuse techniques, or at least it gives clues to do so. For this it calls for gauging the effectiveness of a reuse technique in terms of _cognitive distance_, that is, in terms of the _intellectual effort required (by software developers) to use it_. Interestingly, the author points out in his conclusion that the cognitive distance can be reduced in two ways:
 
-* by reducing the intellectual effort required to go *from the conceptualization of a system to a specification* in the abstractions proposed by the reuse technique and, 
-* by reducing the effort required to *produce an executable system from that specification*.
+* By reducing the intellectual effort required to go *from the conceptualization of a system to a specification* in the abstractions proposed by the reuse technique and, 
+* By reducing the effort required to *produce an executable system from that specification*.
 
 The paper also provides an approximate ranking of the height reuse techniques, rated on how well they minimize cognitive distance by each of the two methods mentioned above. _Application generators_ win the first ranking while _high level languages_ win the second one (refer to the paper for details).
 
@@ -39,9 +39,9 @@ The paper also provides an approximate ranking of the height reuse techniques, r
 
 I'd like to close the paper review with something maybe more subjective. First, we can argue retrospectively about the effectiveness of the reuse techniques. The same certainly applies about the paper rankings. My personal feeling however is that the rankings are quite convincing even if not all reuse techniques suffer the same success. Second, I would like to point out how relevant the _research method_ seems to me (don't forget that the paper has been published in 1992): 
 
-* most of the reusable artifacts and reuse techniques I know and use everyday are covered by this survey, 
-* in my opinion, the four dimensions chosen for classifying them still give remarkable clues today for comparing and improving the tools we have,
-* when evaluating the effort required to apply a reuse technique, the notion of _cognitive distance_ and the relevance of distinguishing between ease of specification (in terms of reusable abstractions) and ease of realization (i.e. obtaining an executable) is definitely worth considering ... and should be considered much more often, IMHO (at the risk of making a forward reference: your technique/language/library/whatever is only effective if it helps gaining both ways, or at least if gaining one way is not at the expense of the other).
+* Most of the reusable artifacts and reuse techniques I know and use everyday are covered by this survey.
+* In my opinion, the four dimensions chosen for classifying them still give remarkable clues today for comparing and improving the tools we have.
+* When evaluating the effort required to apply a reuse technique, the notion of _cognitive distance_ and the relevance of distinguishing between ease of specification (in terms of reusable abstractions) and ease of realization (i.e. obtaining an executable) is definitely worth considering ... and should be considered much more often, IMHO (at the risk of making a forward reference: your technique/language/library/whatever is only effective if it helps gaining both ways, or at least if gaining one way is not at the expense of the other).
 
 Of course, I'll specifically refer to these points later in this post. Before actually discussing the specific difficulties I encounter in practice, I would like to review the different reuse techniques discussed in the paper in the light of the languages and tools I personally use at the time of writing.
 
@@ -51,7 +51,7 @@ Nowadays, no one would seriously argue that _software reuse has failed to become
 
 #### @?{High Level Languages}
 
-*{info.programming_languages as l}{@?{!{l} programming language}{!{l}}}{, } and so on., high level languages are numerous and various. Each one comes with its set of tools to raise the abstraction level (sometimes in certain respects only, like providing good abstractions for concurrency, or low-level tasks).
+Java, Clojure, Ruby, Haskell, and so on. High level languages are numerous and various. Each one comes with its set of tools to raise the abstraction level (sometimes in certain respects only, like providing good abstractions for concurrency, or low-level tasks).
 
 #### @?{Source code components}
 
@@ -95,10 +95,7 @@ See you at the @{reuse_in_practice}{practical session about reuse}!
 
 ### References
 
-fn1. Charles W. Krueger, @?{Charles W. Krueger Software Reuse}{_Software Reuse_}, ACM Computing Surveys, Volume 24 Issue 2, June 1992
-
-fn2. Peter Naur and Brian Randell, @{http://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF}{_Software engineering: Report of a conference sponsored by the NATO Science Committee_}, Garmisch, Germany: Scientific Affairs Division, NATO, October 1968
-
-fn3. Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, @?{Design Patterns: Elements of Reusable Object-Oriented Software}, Addison-Wesley, 1995. ISBN 0-201-63361-2
-
-fn4. Erich Gamma and Kent Beck, @?{Contributing to Eclipse: Principles, Patterns, and Plug-Ins}, Addison-Wesley, October 2003. ISBN 0-321-20575-8
+1. Charles W. Krueger, @?{Charles W. Krueger Software Reuse}{_Software Reuse_}, ACM Computing Surveys, Volume 24 Issue 2, June 1992
+2. Peter Naur and Brian Randell, @{http://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1968.PDF}{_Software engineering: Report of a conference sponsored by the NATO Science Committee_}, Garmisch, Germany: Scientific Affairs Division, NATO, October 1968
+3. Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, @?{Design Patterns: Elements of Reusable Object-Oriented Software}, Addison-Wesley, 1995. ISBN 0-201-63361-2
+4. Erich Gamma and Kent Beck, @?{Contributing to Eclipse: Principles, Patterns, and Plug-Ins}, Addison-Wesley, October 2003. ISBN 0-321-20575-8
