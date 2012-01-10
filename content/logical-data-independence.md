@@ -1,6 +1,6 @@
 --- 
 title: About Logical Data Independence
-short: Logical Data Independence
+short: Logical Data Independence I
 subtitle: Let's celebrate the birthday of Relational
 date: 2009-11-20 19:12:00 +01:00
 category: Databases
