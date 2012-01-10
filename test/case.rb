@@ -1,3 +1,4 @@
+ENV["RACK_ENV"] = "test"
 require 'revision_zero'
 require 'test/unit'
 require 'rack/test'

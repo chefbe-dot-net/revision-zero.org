@@ -3,4 +3,4 @@ require 'epath'
 require 'sinatra'
 require 'websync'
 require 'albino'
-
+require 'mail'

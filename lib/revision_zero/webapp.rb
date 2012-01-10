@@ -12,6 +12,26 @@ module RevisionZero
       enable  :raise_errors
       disable :show_exceptions
     end
+    
+    configure(:production) do
+      Mail.defaults do
+        delivery_method :smtp, { 
+         :address   => "localhost",
+         :port      => 25,
+         :domain    => 'revision-zero.org',
+         :user_name => nil,
+         :password  => nil,
+         :authentication => nil,
+         :enable_starttls_auto => false 
+        }
+      end
+    end
+    
+    configure(:test, :development) do
+      Mail.defaults do
+        delivery_method :test
+      end
+    end
 
     ############################################################## Google routes
 
@@ -48,6 +68,26 @@ module RevisionZero
         410
       else
         pass
+      end
+    end
+
+    ############################################################## Leaving a comment
+
+    post '/leave-comment' do
+      nick, comment, sender, writing = params.values_at("nickname", "comment", "mail", "writing").map{|x|
+        (x || "").strip.empty? ? nil : x.strip
+      }
+      sender ||= "info@revision-zero.org"
+      
+      unless nick and comment and writing
+        400
+      else
+        Mail.deliver do
+             from(sender)
+               to("blambeau@gmail.com")
+          subject("[revision-zero.org] Comment from #{nick} (#{writing})")
+             body(comment)
+        end
       end
     end
 
