@@ -21,4 +21,12 @@ class Case < Test::Unit::TestCase
     end
   end
 
+  def test_internal
+    if self.class == Case
+      assert internal?("relative")
+      assert internal?("/absolute")
+      assert !internal?("http://www.google.com/")
+    end 
+  end
+
 end
