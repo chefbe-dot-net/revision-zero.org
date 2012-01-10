@@ -13,23 +13,6 @@ module RevisionZero
       disable :show_exceptions
     end
 
-    ########################################################### Rewriting routes
-
-    rewriting = YAML.load((content_folder/"rewriting.yaml").read)
-
-    Array(rewriting["redirect"]).each do |h|
-      from, to, status = h.values_at("from", "to", "status")
-      get from do 
-        redirect to, status || 301
-      end
-    end
-
-    Array(rewriting["removed"]).each do |url|
-      get url do
-        410
-      end
-    end
-
     ############################################################## Google routes
 
     get '/sitemap.xml' do
@@ -47,11 +30,29 @@ module RevisionZero
     ############################################################## Normal routes
 
     get "/" do
-      serve writings.last["__url__"]
+      serve content_for(writings.last["__url__"])
     end
 
     get %r{^/(.*)} do
-      serve params[:captures].first
+      pass unless content = content_for(params[:captures].first)
+      serve content
+    end
+
+    ########################################################### Rewriting routes
+
+    rewriting = YAML.load((content_folder/"rewriting.yaml").read)
+
+    Array(rewriting["redirect"]).each do |h|
+      from, to, status = h.values_at("from", "to", "status")
+      get from do 
+        redirect to, status || 301
+      end
+    end
+
+    Array(rewriting["removed"]).each do |url|
+      get url do
+        410
+      end
     end
 
     ############################################################## Error handling

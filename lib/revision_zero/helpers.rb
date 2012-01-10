@@ -11,14 +11,14 @@ module RevisionZero
     def default_context
       {"writings" => writings, "environment" => settings.environment}
     end
+    
+    def content_for(url)
+      Content.find(settings.content_folder, url)
+    end
 
-    def serve(url)
-      if content = Content.find(settings.content_folder, url)
-        ctx = default_context.merge(content.to_h)
-        WLang::file_instantiate settings.templates_folder/"html.whtml", ctx
-      else
-        not_found
-      end
+    def serve(content)
+      ctx = default_context.merge(content.to_h)
+      WLang::file_instantiate settings.templates_folder/"html.whtml", ctx
     end
 
   end # module Helpers
