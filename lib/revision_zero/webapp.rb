@@ -40,18 +40,15 @@ module RevisionZero
 
     ########################################################### Rewriting routes
 
-    rewriting = YAML.load((content_folder/"rewriting.yaml").read)
-
-    Array(rewriting["redirect"]).each do |h|
-      from, to, status = h.values_at("from", "to", "status")
-      get from do 
-        redirect to, status || 301
-      end
-    end
-
-    Array(rewriting["removed"]).each do |url|
-      get url do
+    get // do
+      rewriting = YAML.load((settings.content_folder/"rewriting.yaml").read)
+      url = request.path
+      if entry = rewriting["redirect"].find{|e| e["from"] == url}
+        redirect entry["to"], entry["status"] || 301
+      elsif entry = rewriting["removed"].include?(url)
         410
+      else
+        pass
       end
     end
 
