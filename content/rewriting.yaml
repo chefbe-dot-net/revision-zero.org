@@ -1,0 +1,23 @@
+--- 
+redirect: 
+- from: /release_time
+  to: /release-time
+  status: 301
+- from: /logical_data_independence_2
+  to: /logical-data-independence-2
+  status: 301
+- from: /new_look
+  to: /new-look
+  status: 301
+- from: /bundler_and_lifecycle
+  to: /bundler-and-lifecycle
+  status: 301
+- from: /web_duck_typing
+  to: /web-duck-typing
+  status: 301
+- from: /logical_data_independence
+  to: /logical-data-independence
+  status: 301
+- from: /kernel_dot_spawn
+  to: /kernel-dot-spawn
+  status: 301

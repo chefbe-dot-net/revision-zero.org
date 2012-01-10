@@ -1,0 +1,24 @@
+<div class="leave-a-comment">
+  <h3>Leave a comment</h3>
+  <div style="clear:both"></div>
+</div>
+
+<p>The form below allows you to leave me a comment about the post above. 
+Comments are not automatically rendered below posts, but I would be happy 
+to address interesting questions/issues. Simply leave me a contact address 
+if you prefer a personal answer.</p>
+
+<form id="leave-a-comment" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="writing" value="{__url__}"/>
+  <label for="nickname">Nickname</label> 
+  <input type="text" name="nickname" value=""/>
+  <label for="mail">Email (optional)</label> 
+  <input type="text" name="mail" value=""/>
+  <label for="comment">Comment</label>
+  <textarea name="comment"></textarea>
+  <input type="submit" value="Submit" class="button"/>
+  <div class="feedback"></div>
+</form>
+<script type="text/javascript">
+$(document).ready(function(){ $("form#leave-a-comment").submit(leave_a_comment); });
+</script> 

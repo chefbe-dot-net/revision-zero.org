@@ -1,0 +1,20 @@
+<div id="navigation">
+  ?{knows?(:next)}{
+    <a class="nav enabled" id="leftnav" href="@{+{next}}"></a>
+  }{
+    <div class="nav disabled" id="leftnav"></div>
+  }
+  ?{knows?(:previous)}{
+    <a class="nav enabled" id="rightnav" href="@{+{previous}}"></a>
+  }{
+    <div class="nav disabled" id="rightnav"></div>
+  }
+  <div style="clear:both;"></div>
+</div>
+<ul id="writings">
+  *{writings.reverse as w}{
+    <li class="?{w.__path__ == __path__}{current}{normal}">
+      @{${w.__url__}}{${w.short || w.title}}
+    </li> 
+  }
+</ul>
