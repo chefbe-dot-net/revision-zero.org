@@ -110,4 +110,4 @@ Many thanks to Jonathan Leffler and my brother Fabre for their careful reading, 
 
 ### References
 
-fn1. C.J. Date, Hugh Darwen and Nikos Lorentzos, _Temporal Data & the Relational Model_, Morgan Kaufmann, 2002, 1st edition, 422 pages, ISBN 1-55860-855-9.
+1. C.J. Date, Hugh Darwen and Nikos Lorentzos, _Temporal Data & the Relational Model_, Morgan Kaufmann, 2002, 1st edition, 422 pages, ISBN 1-55860-855-9.
