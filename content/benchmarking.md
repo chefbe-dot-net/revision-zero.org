@@ -1,5 +1,5 @@
 --- 
-title: Ruby Benchmarking & Complexity, a (counter) example (?)
+title: Ruby Benchmarking & Complexity
 short: Ruby Benchmarking
 date: 2011-01-25 09:42:00 +01:00
 category: Ruby
