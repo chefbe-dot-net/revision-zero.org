@@ -22,7 +22,7 @@ In other words,
 
 The definitions above make use of specific terms that I would like to discuss now.
 
-### Types and Values
+## Types and Values
 
 Managing data certainly means being able to reason in terms of types, values, and (to a lesser extent) variables. Those concepts may seem obvious to you... great! However, it does not seem that obvious in object-oriented programming languages such as ruby, so I'd like to discuss them in more details.
 
@@ -56,7 +56,7 @@ For this program to be written, you'll necessarily need to bring some order in t
 
 > Current languages tend to think that "to be" is the same as "to behave", which is wrong.
 
-### Tuples and Relations
+## Tuples and Relations
 
 The information principle requires all information in a relational database to be represented through relations. Let now make this a bit more precise:
 
@@ -82,7 +82,7 @@ The following observations can be made on this example:
 
 In our example above, the relation contains tuples that have all the same "structure". This is not incidental, as I explain now.
 
-### Tuple and relation types
+## Tuple and relation types
 
 If values are elements of a type and if tuples and relations are values, then they must also have a type. Otherwise, our mathematical framework would not be sound. To bring some soundness here, consider the following notion of _heading_:
 
@@ -107,7 +107,7 @@ As you can see, these definitions imply that a relation must have all tuples wit
 
 It might be argued that such a mathematical framework is very restrictive, i.e. that strong typing is not a good choice and that the latter relation makes perfect sense. Well, in my opinion data-management often means bringing order to data and strong typing helps achieving this task. Beyond that, alternative frameworks might of course be considered. Keep in mind, however, that we need _sound_ frameworks allowing formal reasoning. Formal reasoning, is what allows the definition of a query language such as relational algebra, and optimizations when evaluating query expressions. I'll stick here with this mathematical framework which is a good trade-off between flexibility and rigor.
 
-### Variables and relational databases
+## Variables and relational databases
 
 We now have sound notions for (rich) data types, values and relations. What is a relational database then? A collection of relations. Most precisely, a collection of relation variables.
 
@@ -137,7 +137,7 @@ No, we have said that variables contain different values at different times. So 
 (INSERT t INTO RELVAR)  means (RELVAR = PREV_VALUE UNION (RELATION t))
 (DELETE RELVAR WHERE x) means (RELVAR = PREV_VALUE MINUS (PREV_VALUE WHERE x))}
 
-### A few consequences as thought provoking conclusion
+## A few consequences as thought provoking conclusion
 
 So far so good. Isn't it a beautiful way of defining relational databases? A collection of variables that contain relation values. _Inefficient_, I hear you. Beeeeeeepp! 
 

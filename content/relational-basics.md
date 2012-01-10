@@ -18,7 +18,7 @@ I'd like to write a few essays related to relational databases in the next weeks
 
 Let me add that the material covered here is mostly inspired from what can be found in @{http://www.thethirdmanifesto.com/}{the third manifesto}, by Hugh Darwen and Chris Date. TL;DR: you should read that piece of work, really.
 
-### The relational theory is made of _orthogonal_ layers
+## The relational theory is made of _orthogonal_ layers
 
 When I ask my colleagues or students how they would describe relational databases, it often ends up with an answer along the following lines:
 

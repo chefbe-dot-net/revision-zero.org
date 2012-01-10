@@ -17,7 +17,7 @@ My @{logical_data_independence}{first post about logical data independence} is b
 
 > *Logical data independence* is this concept applied to the database logical layer. This logical layer is part of the public, external specification of the database: what real-world concepts is the database talking about? how do they relate to each other? how do we query that data?
 
-### Two kinds of change
+## Two kinds of change
 
 From the definitions, distinguishing between physical and logical changes is easy: if you move your data from one place to another one, if you add an index, if you change the encoding, etc. you make a physical change. If your database offers physical data independence (which is the case with SQL databases in practice), you won't have to change too many lines of code of (the rest of) the software, if any.
 
@@ -25,13 +25,13 @@ In contrast, if you add a concept (in SQL terms, a table or a column for instanc
 
 Note that most authors restrict their attention to physical and logical *schema changes*. Strictly speaking, the logical (resp. physical) schema is only one part of the physical (resp. logical) layer, even if the most important one. For completeness, we should also consider other kinds of change. For instance, modifying the semantics of the logical query language (SQL, for example) is a change to the logical layer. And a non-backward compatible change would certainly hurts logical independence.
 
-#### Aside: _What kind of database?_
+### Aside: _What kind of database?_
 
 I would like to stress the fact that I'm not exclusively talking about _relational databases_ here. The data independence concepts have been made clear thanks to Codd's work on the relational model, but they seem sufficiently abstract to remain relevant when considering other kinds of databases. If you know about some of the NoSQL databases that recently appeared, I strongly invite you to reason in terms of physical vs. logical layers and data independence. Note that I'm not especially advocating for or against such databases here. Nevertheless, if many NoSQL writings discuss scalability, consistency, availability and/or partition tolerance (also have a google search about what is called the @?{CAP theorem}) only @?{NoSQL data independence}{a few} propose a discussion in terms of those classical independence concepts, which are equally important.
 
 I'll try to continue this discussion in a later post (there would be a lot to say about NoSQL, but it is not my aim in this particular post). In the meantime, I strongly invite you to conduct such a study yourself. Please drop me an email if you write something about data independence and NoSQL on your own blog. I would certainly like to read it. Thanks!
 
-### A real-world example of logical change
+## A real-world example of logical change
 
 In contrast to physical independence, few books give convincing examples of changes applied to the logical layer. Moreover, none that I know gives any tip or pattern for preventing such changes to propagate and hurt the rest of the software code. This is very strange in a sense because logical changes are often a consequence of software success: new features and/or enhancements of existing ones will certainly require changes to the logical database schema. Without pretending that I've found THE killer example, I've recently encountered an interesting use case on a real case study. As it is that example that initially triggered my motivation in writing this series of posts, I'd like to spend some time summarizing it here.
 
@@ -64,7 +64,7 @@ Now, specific technical solutions to the problem at hand may certainly be discus
 
 The additional requirement mentioned between brackets, while probably arguable, is some kind of natural consequence of what logical data independence is about. I mean that fully transparent solutions exist that would not even touch either the database or legacy softwares (analyzing database logs, introducing a network sniffer, or whatever). However, such solutions have the major drawback of not providing an unified view of data. In the example, it is very likely that we'll later have to analyze historical data with respect to other concepts already present in the database (what kind of medical analysis? what disease? who is the physician? his expertise? and so on). Therefore, ensuring an uniform, query-able, logical schema of data might look like a good idea. In any case, thinking in terms of logical data independence does not really make sense if you remove this requirement (why?). Therefore and for the sake of the example, let's consider that it has to be met! In that case, and given all stated requirements, what solution would you suggest?
 
-### Possible solutions in the RM/SQL world
+## Possible solutions in the RM/SQL world
 
 The first solution I've imagined at that time is the one that I still consider the simplest and most clean (at least theoretically). It consists in doing exactly what the classical database theory would recommend: modifying the logical schema for real while ensuring a consistent view of the previous schema to legacy softwares using the database (therefore guaranteeing logical data independence). In essence, it consists in doing what is illustrated in the figure below, namely:
 
@@ -77,7 +77,7 @@ The first solution I've imagined at that time is the one that I still consider t
 
 This first solution is only achievable if the DBMS provides either <code>INSTEAD OF</code> rules or <code>ON INSERT/UPDATE/DELETE</code> triggers on views (that PostgreSQL provides, for example) or something semantically equivalent. Except for the initial data migration that consists in splitting the <code>appointments</code> table, implementing the requested feature takes about 25 lines of SQL and is implemented in approximately 30 minutes. Above all, it does not require any other change, nor re-compilation or re-deployment of legacy software. This is what logical data independence is about.
 
-#### An alternative way
+### An alternative way
 
 An alternative way is worth considering if the DBMS does not provide rules and/or triggers on views. It consist in keeping the original <code>appointments</code> table unchanged (trivially providing logical data independence, by construction) and adding <code>ON UPDATE</code> and <code>ON INSERT</code> triggers to fill an <code>appointment_history</code> table that keeps track of all updates of the <code>status</code> attribute over time.
 
@@ -85,11 +85,11 @@ An alternative way is worth considering if the DBMS does not provide rules and/o
 
 From a theoretical point of view I'm a bit less in favor of this second solution, mainly because it involves explicit data redundancy of the appointment <code>status</code> and, as such, does not support appointment deletion without loss of data (the previous solution does). One can overcome this weakness at the cost of more complexity, more redundancy and/or more de-normalization (variations around duplicating the whole appointments table). In contrast, this solution avoids the data migration cost that would be required if the previous solution was chosen. In any case, this solution equally provides logical data independence!
 
-#### Other solutions?
+### Other solutions?
 
 I could imagine a lot of variations around the two previous solutions, using rules, triggers, materialized views... The example considered here is representative of situations where new requirements require the introduction of a temporal dimension to some part of the existing database (a single attribute here). As you've seen, I'm in favor of tackling such a problem via the database logical schema itself for the reasons mentioned above. If you're interested in further reading about similar temporal schema issues, I strongly suggest reading "Temporal Data and the Relational Model"[1] which provides a rich and deep investigation of that topic. 
 
-### Conclusion
+## Conclusion
 
 In this post, I've summarized what is theoretically meant by _logical data independence_ and discussed a real-world example together with possible solutions. As shown, those solutions require support from the DBMS in terms of rules, triggers or something equivalent. More generally, 
 
@@ -104,10 +104,10 @@ Now, the applicability of proposed solutions on the problem at hand are arguable
 
 If these functional requirements are met it is also important to evaluate non functional requirements: easiness of the solution, applicability in practice, efficiency, maintainability, and so on. If they are not, it seems difficult to argue that the solution provides logical data independence in the first place. Of course, one might argue that sacrificing logical data independence is sometimes necessary in presence of other requirements (something similar currently happens with the NoSQL trend that tend to sacrifice consistency for scalability, for instance). This would lead to another discussion, though.
 
-### Credits
+## Credits
 
 Many thanks to Jonathan Leffler and my brother Fabre for their careful reading, friendly comments and english corrections of these posts on logical data independence. This is greatly appreciated!
 
-### References
+## References
 
 1. C.J. Date, Hugh Darwen and Nikos Lorentzos, _Temporal Data & the Relational Model_, Morgan Kaufmann, 2002, 1st edition, 422 pages, ISBN 1-55860-855-9.

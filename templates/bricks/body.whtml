@@ -18,7 +18,6 @@
     </div>
     <div class="middle">
 <<+{article.whtml share all}
-<<+{comment.whtml share all}
     </div>
     <div style="clear: both;"></div>
   </div>

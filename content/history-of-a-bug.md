@@ -24,7 +24,7 @@ If you have found this post recently (around March 2011), it's very likely that 
 * When installing a few ruby gems at once via third party tools (capistrano, rails, ...)
 * When phusion passenger attempts to start your rails/sinatra application
 
-### Temporal bug review
+## Temporal bug review
 
 The pristine bug is already old (about 2 years) and is due to a Fixnum -> Bignum overflow when computing a hash code, especially on arrays. It seems that it has been discovered in REXML and @{http://redmine.ruby-lang.org/issues/show/1883}{first reported on the ruby-lang bug tracker} the 05 of August 2009. Then it has been quickly fixed. More precisely it was already fixed when the issued has been created.
 
@@ -38,7 +38,7 @@ Since that time, the @{http://rubyforge.org/tracker/index.php?func=detail&aid=27
 
 The @{http://rubyforge.org/tracker/index.php?func=detail&aid=27154&group_id=126&atid=575}{most recent bug report on rubygems} has been closed the 1th of February 2010 with a message "This is fixed." and no particular patch applied.
 
-### Affected ruby[gems] versions
+## Affected ruby[gems] versions
 
 The issue has been fixed in ruby 1.8.7 in @{https://redmine.ruby-lang.org/projects/ruby-18/repository/revisions/25661}{Revision 25661} on November 5, 2009 by merging changeset r22308. Strangely, the @{http://svn.ruby-lang.org/repos/ruby/tags/v1_8_7_334/ChangeLog}{Changelog file of ruby's 1.8.7} does not contain any information about changesets applied between the 08 of April and the 26 of May. Therefore no trace of this fix has been officially kept. However, a quick bisection (thanks to @{http://rvm.beginrescueend.com/}{rvm} in passing) shows the following:
 
@@ -52,7 +52,7 @@ In spite of bug reports and patches introduced in rubygems bug tracker, no patch
 
 * <span style="color:red">ruby 1.8.7-p174 + rubygems 1.5.3, KO</span>
 
-### How to fix it?
+## How to fix it?
 
 At the time of writing, the only clean way to fix this bug is to upgrade your ruby version. As you probably know, if you are under Debian/Ubuntu and would like to rely on an official ruby package (at least for ruby itself), then ... hum ... you'll probably have to wait. 
 
@@ -76,13 +76,13 @@ blambeau@aello $ diff -u requirement.rb.orig requirement.rb
    def marshal_dump # :nodoc:
 }
 
-### Conclusion
+## Conclusion
 
 I won't spend too much time concluding about all of this. Bugs happen are sometimes hard to understand and fix. However, I can't resist having a personal lecture of all of this in the light of somewhat recent discussions about @{http://www.lucas-nussbaum.net/blog/?p=617}{ruby packaging} and @{http://redmine.ruby-lang.org/issues/show/4239}{compatibility issues}. 
 
 The fact that old bugs suddenly resurrect certainly means that users rely on ruby versions that important committers in the ecosystem already consider as 'oldies'... If OPs should certainly migrate (but need support to do so), committers should take care.
 
-### Links
+## Links
 
 * August 05 2009, on @{http://redmine.ruby-lang.org/issues/show/1883}{ruby-lang bug tracker}, someone reports the bug in REXML
 * August 08 2009, first appearance of the bug on @{http://rubyforge.org/tracker/?func=detail&atid=575&aid=26958&group_id=126}{rubygems bug tracker}

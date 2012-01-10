@@ -13,7 +13,7 @@ It has always been hard for me to decide when it is the time to release: new cod
 
 I've chosen to release three Ruby libraries that are not too experimental and are stable enough to be shared. Here are they:
 
-### @{http://github.com/blambeau/wlang}{WLang reference implementation}
+## @{http://github.com/blambeau/wlang}{WLang reference implementation}
 
 If you have read previous posts, you have already heard a bit about _wlang_. Instead of first writing in detail about it, I've decided to spend time implementing a stable reference implementation. Two versions are @{http://code.chefbe.net}{available online}: a first stable version tagged 0.7.0 and the trunk version we (my brother and I) are still working on.
 
@@ -21,7 +21,7 @@ It's hard to explain exactly what _wlang_ is but here is the rule: if you have t
 
 We are still working actively on _wlang_ and plan to release a first 1.0 milestone release in the next few weeks, with a lot of additional examples.
 
-### @{http://github.com/blambeau/anagram}{Anagram}
+## @{http://github.com/blambeau/anagram}{Anagram}
 
 This library is born from a long history of research and interests, spanning years, that resulted from one simple realisation: I've always been bored by classical parser generators. Writing your grammar is often a nightmare! I've been introduced to @{http://en.wikipedia.org/wiki/Parsing_expression_grammar}{Parsing Expression Grammars} (PEG) three years ago. In my opinion, PEG is a much simpler and intuitive methodology than other parsing techniques so I've started a Java project a long time ago based on @{http://cs.nyu.edu/rgrimm/xtc/rats.html}{Rats!}. This project was however way too experimental, not sufficiently tested nor documented and therefore it will never be released as a public library. 
 
@@ -31,7 +31,7 @@ As you know, I'm a never happy guy: your parser generates a purely syntactic tre
 
 Anagram is born from the lack of supporting tools for these hard (and a bit boring) tasks. It comes with a parser generator (same grammar format as Treetop), AST abstractions and rewriting tools, and can be used in conjunction with _wlang_ to generate code. The online version is still experimental but accurately depicts the picture: the code to generate a parser from your grammar file has less than 200 lines of code, thanks to rewriting tools and _wlang_.
 
-### @{http://code.chefbe.net}{Chefbe Ruby Utility Classes}
+## @{http://code.chefbe.net}{Chefbe Ruby Utility Classes}
 
 Much more anecdotal, I've created a repository of utility classes that are useful in different projects. This first version contains only one class (a powerful composite Interval implementation) that a research team-mate would like to reuse (or inspire himself from). Many other classes will also be extracted from specific projects and stored in this repository instead. The rule for this project is simple: classes are self-contained (no intra/extra dependencies), well tested and documented. I will probably not create a gem for this project: pick up the classes you are interested in, copy them in your own codebase but please keep the licence header.
 

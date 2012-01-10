@@ -14,7 +14,7 @@ I was recently looking at the presentation @{http://confreaks.net/videos/427-rub
 
 The reason is that some examples in the slides can be very misleading IMHO. Amazingly, Aaron himself writes "Don't believe me" and "Think critically". Let's do that: I dare this writing.
 
-### Benchmarking and asserting execution time
+## Benchmarking and asserting execution time
 
 The example below is given at slide 104 (@{http://www.slideshare.net/tenderlove/zomg-why-is-this-code-so-slow)}{click here for the slides}, when Aaron introduces the @{https://github.com/seattlerb/minitest}{minitest/benchmark} library (I must add that, at the time of writing, a very similar example is given in @{https://github.com/seattlerb/minitest/blob/81fe0a56f5dd29036e3bec107cca48a136c42470/README.txt#L110-119)}{minitest's own README}. 
 
@@ -31,7 +31,7 @@ As you can see below, the test passes. The execution time exhibits a beautiful l
 
 #<{benchmarking/fib1_result.sh}
 
-### Trivially true or simply wrong?
+## Trivially true or simply wrong?
 
 Not at all, because the assertion is trivially true. Therefore the test is useless, if not simply wrong.
 
@@ -62,7 +62,7 @@ end
 
 The assertion is trivially true as well as the test, and the benchmarking approach itself is misleading, if not wrong.
 
-### Really?
+## Really?
 
 Unfortunately if you want to go deeper in your understanding, things get more complicated. The truth is that answering whether the benchmarking is wrong or not depends on what you want to assert precisely. In this respect, the example at hand is amazing because:
 
@@ -105,7 +105,7 @@ So what is asserted exactly? Is the assertion trivially true, really? No exactly
 1. ... so on.
 
 
-### What could /should it be?
+## What could /should it be?
 
 At this step, you could argue that it is a typo on the slide and that the bench method was intended to be as shown below:
 
@@ -149,17 +149,17 @@ end
 
 The last two examples are right, and correctly assert that `fib` itself has a linear complexity. The first one repeats the computation 100 times, to have better statistical results. The latter point is extremely important, to avoid having tests that wrongly success or fail (see later).
 
-### So what?
+## So what?
 
 So what? What happened? Is it important? For me, the main problem with Aaron's talk is that it mixes two different concerns:  _benchmarking_ and _asserting complexity_. And keeping these concerns separate is certainly important! Let's have a quick look at the differences. 
 
-#### Benchmarking
+### Benchmarking
 
 What Aaron is actually interested in his talk is _benchmarking_. Benchmarking allows *measuring and comparing execution times*. In that case, executing the same constant code (e.g. `fib(1000)`) over and over again perfectly makes sense. It is what Aaron is actually doing on all slides showing linear curves (@{http://www.slideshare.net/tenderlove/zomg-why-is-this-code-so-slow}{slides} 153, 163, 166, 174, 180, 183, 187, and so on.): it compares different implementations of similar specifications. The fact that the curves are linear is misleading: it does not say anything about the internal complexity of the different implementations. But it makes the job: the delta between the different curves (in mathematical words: the difference of the slope of the curves) is representative of the efficiency difference between these implementations!
 
 Even if it makes sense, remember that conducting a benchmarking experiment on one example only (e.g. `fib(1000)`) is extremely insignificant, statistically speaking. Varying parameters and computing the average execution time is certainly better that executing the code with the same parameter, even a billion times. I must confess that correctly designing such a benchmarking experiment is also a bit harder. Aaron showed you the easiest and the very pragmatic way, very arguable but working (as demonstrated)! 
 
-#### Asserting complexity
+### Asserting complexity
 
 Asserting the internal complexity of an algorithm is another beast, and is probably much harder than benchmarking. Asserting complexity is asserting about the *performance of an algorithm with respect to the size of the problem it solves*. Well, it is (somewhat) obvious that asserting complexity is not Aaron's motivation. Instead he mainly uses `assert_linear_performance` as a pragmatic way of measuring execution time and reporting it on a plot (see what he says at 18:15). All examples with `assert_linear_performance` are actually flawed, as I've discussed earlier.
 
@@ -167,7 +167,7 @@ To reason about the complexity of your algorithm you *have to* design an experim
 
 Asserting the complexity of the algorithm from such measures is even harder than simply visualizing it (isn't even undecidable??? please drop me an email if you know the answer). The idea (and what @{https://github.com/seattlerb/minitest}{minitest/benchmark} does) is to fit the measures with a given mathematical profile (linear, polynomial, exponential), and to check whether the fitting error is under a given threshold. In my opinion, designing and conducting such an experiment rigorously is difficult and requires time (both for the design and the execution of the experiment) and a lot of experience. For this reason, I personally doubt about the pertinence of having such assertions in an automated test suite. Anyway, if you plan to use them, remember to also output graphs and to have a look at it! Human inspection is sometimes much more pragmatic and rigorous than flawed automations ;-)
 
-### Conclusion
+## Conclusion
 
 I'll conclude this post with Aaron's own response to the mail I've sent to him about this:
 

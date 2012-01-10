@@ -21,18 +21,18 @@ a:hover{cursor:pointer;}
 #leftnav.enabled:hover{background-image:url(leftnav.png);}
 #rightnav{float:left;background-image:url(rightnav_bw.png);right:50px;}
 #rightnav.enabled:hover{background-image:url(rightnav.png);}
-.middle{width:815px;padding:15px;padding-left:260px;text-align:justify;margin-bottom:120px;line-height:1.3em;}.middle h2{padding:10px 0px;font-size:30px;text-align:left;line-height:1.3em;}
-.middle .writing-title .date{text-align:right;}
-.middle h3{padding-top:20px;}
-.middle h4{padding-top:15px;}
+.middle{width:815px;padding:15px;padding-left:260px;text-align:justify;margin-bottom:120px;line-height:1.3em;}.middle h1{padding:10px 0px;font-size:30px;text-align:left;line-height:1.3em;}
+.middle h2{padding-top:20px;font-size:20px;}
+.middle h3{padding-top:15px;font-size:16px;}
+.middle h2 a,.middle h2 a:visited,.middle h3 a,.middle h3 a:visited{color:#212122;text-decoration:none;}
+.middle h2 a:hover,.middle h3 a:hover{color:#A30600;text-decoration:underline;}
+.middle header .date{text-align:right;}
 .middle img{display:block;margin:auto;padding:25px 0px;text-align:center;}
 .middle p,.middle ul,.middle ol,.middle pre,.middle table{padding:15px 0px 0px 0px;}
 .middle ul,.middle ol{padding-left:45px;}
 .middle ul li,.middle ol li{padding-top:5px;}
 .middle a,.middle a:visited{color:#A30600;text-decoration:none;}
 .middle a:hover{text-decoration:underline;}
-.middle h3 a,.middle h3 a:visited,.middle h4 a,.middle h4 a:visited{color:#212122;text-decoration:none;}
-.middle h3 a:hover,.middle h4 a:hover{color:#A30600;text-decoration:underline;}
 .middle table{padding-left:20px;}
 .middle table tr td{padding:3px 10px 3px 0px;}
 .middle table tr td{vertical-align:top;text-align:justify;}

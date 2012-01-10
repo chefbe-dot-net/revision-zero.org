@@ -13,7 +13,7 @@ short: WLang (Part I)
 ---
 As I've said previously (in the @{topics0}{abstract of this paper}), each time you write a simple html page (or a SQL query) manually, what you are actually doing is creating a (kind of) program, that will be interpreted by a brower (or by a database engine). If the page or the query is created by string concatenation what you are actually doing is generating code. Generating code is far from trivial: you have to respect a lot of good practices and conventions in order to build correct and secure programs.  If you known perfectly what we mean by <em>proper value encoding</em>, <em>query structure preserving</em>, <em>backquoting</em>, and the like as well as the dramatic consequences that can occur by not applying them rigorously, then you are ready for enjoying _wlang_ in this domain. In this case, you are invited to read the @{wlang2}{second part of this article}. For the others, below is a short introduction to the problem that _wlang_ solves. We mainly focus on security problems here but _wlang_ helps solving code generation problems in a broader sense.   
 
-### Hello World in PHP 
+## Hello World in PHP 
 
 First of all: you can try this example @{sandbox/helloworld.php}{here}. 
 
@@ -38,7 +38,7 @@ Forgetting to encode data properly like in the example leads to the well known X
 
 > As encoding is left to their responsibility, dramatic consequences of such attacks are due to developer's errors. At least, it seems to be the conclusion of the recent @{http://www.sans.org/top25errors/.}{Experts Announce Agreement on the 25 Most Dangerous Programming Errors}
 
-### When SQL's _select_ performs a _delete_
+## When SQL's _select_ performs a _delete_
 
 First of all: if you want to learn more, read the @{http://en.wikipedia.org/wiki/SQL_injection}{Wikipedia entry on SQL injection attacks}. 
 
@@ -94,7 +94,7 @@ sql = "SELECT * FROM buying WHERE buyerName='#{buyerName}'"}
 
 > As backquoting is left to their responsibility, dramatic consequences of such attacks are due to developer's errors. At least, it seems to be the conclusion of the recent @{http://www.sans.org/top25errors/.}{Experts Announce Agreement on the 25 Most Dangerous Programming Errors}|
 
-### Where are we moving now?
+## Where are we moving now?
 
 This first article about _wlang_ were an introduction to the problem it solves. Even if we have mainly focussed on security problems, the problem is more general: building programs that generates code is an hard task. Indeed, each time you inject a value as part of the generated source <b>you have to respect the syntactical and semantical rules</b> that hold where the value is injected. Those rules are numerous and complex:
 

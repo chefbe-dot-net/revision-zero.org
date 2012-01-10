@@ -14,7 +14,7 @@ I'm really happy to write about databases today! The Relational model, invented 
 
 For a really long time, I wanted to write somewhing about what has been called 'logical data independence' but I didn't  find a good example to illustrate that concept until today. I've just found it now, inspired by a real but simple  application! So let's talk about it. The topic matters: even famous computer scientists wrongly confuse logical and physical data independence... and developers don't even imagine how such an independence could make their job easier! Nevertheless I must confess that logical data independence is somewhat loosely defined... Therefore let me start by sharing my developer's point of view on what it means.
 
-### Independence?
+## Independence?
 
 What does 'logical (data) independence' mean? Well, there are two axes in there: the concept of 'independence', and the 'logical' one. The concept of 'independence' is related to 'change'; the main question 'independence' addresses is:
 
@@ -34,7 +34,7 @@ In practice, a good architecture (the object-oriented programming generally help
 
 ![](images/logical_data_independence/modules.gif)
 
-### What about the Database?
+## What about the Database?
 
 A database is nothing else than a specific architectural module. Therefore a similar reasoning about internal/external changes can be made. However, if the internal vs. external distinction is generally described by programmers in terms of "interface vs. implementation" (as I've just done myself), I feel more comfortable here thinking in terms of "internal vs. external specifications". The reason is simply that a 'database interface' sounds a technical object (some kind of API) while the concept of "data independence" is certainly not. 
 
@@ -50,7 +50,7 @@ To better understand the two kinds of independence, we obviously need to make sp
 
 Let's now discuss physical and logical independence in turn.
 
-### Physical data independence
+## Physical data independence
 
 The first kind of independence is related to a change to the internal implementation of the database. The fact is that a long time ago (in the 60's and 70's, I wasn't even born...), when you had to keep information about employees working in departments, you typically kept records about employees in a flat file and maintained a pointer to the department record in the employee record. To create a report with employees belonging to a given department, you had to iterate employees' records in the flat file (through file cursors and such kind of physical abstractions), gathering those that reference the correct department record by following the pointer. When the way the data was kept on disk was changed (for example through the introduction of an index file directly mapping the list of employees engaged in a given department), the report's code had to change as well (to take profit of this new index, for performance of course)! In other words, there was no data independence.
 
@@ -66,7 +66,7 @@ Observe this query a moment. The most important thing is not that it is declarat
 
 So when talking about changes: you can add or remove indexes, change the way base tables are kept on disk, etc. without affecting the application's code. The responsibility of ensuring that the query can be executed and returns the correct results as well as the choice of available information paths used to do so (what index will be used, for example) is left to the database management system (DBDM), not the application itself. This is what physical independence means!
 
-### Logical data independence
+## Logical data independence
 
 What about logical data independence? According to database books, physical independence means <b>non-intrusive changes of the physical schema</b> where logical independence means <b>non-intrusive changes of the logical one</b>. Physical schema modifications are generally well discussed in database books (index creation, suppression, and so on) and the physical independence well understood by students (they often forget everything about it a bit later, of course!). Examples of logical schema modification are much less convincing in my opinion: renaming or suppression of an attribute (or a table column, if you prefer that vocabulary), removal of a table, and so on. They are logical schema changes, of course, but not good examples! Strictly speaking if I remove a database table for real, I don't see how the application code using that table could not be affected...
 
