@@ -93,6 +93,11 @@ WLang::dialect("active-markdown") do
     [text, reached]
   end
   
+  rule "%" do |parser,offset| 
+    text, reached = parser.parse(offset, "wlang/dummy")
+    [text, reached]
+  end
+  
   post_transform do |text|
     @markdown ||= begin
       opts = {:fenced_code_blocks => true}

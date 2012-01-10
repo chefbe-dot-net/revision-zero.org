@@ -1,10 +1,9 @@
---- 
+---
 title: Welcome to Revision-Zero.org!
 short: Revision-Zero is born!
 date: 2009-01-10 18:16:00 +01:00
 category: Revision-Zero.org
 keywords: []
-
 ---
 Welcome to revision-zero.org ! You are reading the really first revision of this web site. If you read this page you are probably asking yourself what this site is about ? It is about computer science, and only about that. So if you're not a computer scientist or somewhat interrested by computers, you probably won't find any useful information here. Otherwise, read on!
 
@@ -14,7 +13,7 @@ I've created this web site to share ideas. I'm a computer scientist, currently a
 
 You're currently reading revision 0 of this web site. Each time a new article is posted, the revision number is increased. The web site itself will be under constant development. It's a choice: I didn't wanted to select and learn an 'all-in-the-box' blog implem or something like that. So I will create it myself, pragmatically, implementing features when need arrive ... Some posts here will certainly talk about  that development. Revision number 0 is an hand-written simple html page. You can read future revisions of this one with a simple URL pattern:
 
-<center>@{http://www.revision-zero.org/32</center}{http://www.revision-zero.org/32}>
+<center>@{http://www.revision-zero.org/32}{http://www.revision-zero.org/32}</center>
 
 for example, will bring you to the revision numbered 32, which (if already available) is about some computer science topic, maybe about this site development, maybe not.
 
