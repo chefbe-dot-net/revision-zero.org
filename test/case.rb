@@ -3,14 +3,12 @@ require 'test/unit'
 require 'rack/test'
 class Case < Test::Unit::TestCase
   include Rack::Test::Methods
+  include RevisionZero::Helpers
 
   def app
     RevisionZero::WebApp
   end
-
-  def content_folder
-    app.send(:content_folder)
-  end
+  alias :settings :app
 
   def internal?(link)
     link && !(link =~ /^(https?|ftp|mailto):/) && !(link =~ /ajax.googleapis.com/)

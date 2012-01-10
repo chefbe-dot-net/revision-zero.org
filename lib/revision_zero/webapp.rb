@@ -27,6 +27,12 @@ module RevisionZero
     get "/" do
       serve content_for(writings.last["__url__"])
     end
+    
+    get %r{^/(-?\d+)} do
+      index = params[:captures].first.to_i
+      pass unless content = content_for(writings[index]["__url__"])
+      serve content
+    end
 
     get %r{^/(.*)} do
       pass unless content = content_for(params[:captures].first)
