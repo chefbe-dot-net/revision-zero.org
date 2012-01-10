@@ -17,13 +17,8 @@ module RevisionZero
 
     get '/sitemap.xml' do
       content_type "application/xml"
-      tpl = settings.templates_folder/"sitemap.whtml"
-      ctx = {:files => settings.content_folder.glob("**/index.yml").map{|f|
-        def f.to_url
-          parent.to_s[(settings.public_folder.to_s.length+1)..-1]
-        end
-        f
-      }}
+      tpl = templates_folder/"sitemap.whtml"
+      ctx = default_context
       WLang::file_instantiate(tpl, ctx)
     end
 
@@ -41,7 +36,7 @@ module RevisionZero
     ########################################################### Rewriting routes
 
     get // do
-      rewriting = YAML.load((settings.content_folder/"rewriting.yaml").read)
+      rewriting = YAML.load((content_folder/"rewriting.yaml").read)
       url = request.path
       if entry = rewriting["redirect"].find{|e| e["from"] == url}
         redirect entry["to"], entry["status"] || 301
