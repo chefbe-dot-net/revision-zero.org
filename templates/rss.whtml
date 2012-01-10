@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+	    <title>www.revision-zero.org</title>
+	    <description>Computer-science blog</description>
+	    <lastBuildDate>!{Time.now.to_s}</lastBuildDate>
+	    <link>http://www.revision-zero.org</link>
+	    *{writings[-5..-1].reverse as w}{
+	      <item>
+	          <title>${w.title}</title>
+	          <description>
+	            &{~{w.text}}
+	          </description>
+	          <pubDate>${w.date}</pubDate>
+	          <link>http://www.revision-zero.org/${w.__url__}</link>
+	      </item>
+	    }
+	</channel>
+</rss>
