@@ -2,8 +2,17 @@ require 'content'
 module RevisionZero
   module Helpers
 
+    [ :root_folder, 
+      :content_folder, 
+      :public_folder, 
+      :templates_folder ].each do |methname|
+      define_method(methname) do
+        settings.send(methname)
+      end
+    end
+
     def writings
-      settings.content_folder.glob("**/*.md").map{|file|
+      content_folder.glob("**/*.md").map{|file|
         Content.new(file).to_h
       }.sort{|h1,h2| h1["date"] <=> h2["date"]}
     end
@@ -13,12 +22,12 @@ module RevisionZero
     end
     
     def content_for(url)
-      Content.find(settings.content_folder, url)
+      Content.find(content_folder, url)
     end
 
     def serve(content)
       ctx = default_context.merge(content.to_h)
-      WLang::file_instantiate settings.templates_folder/"html.whtml", ctx
+      WLang::file_instantiate templates_folder/"html.whtml", ctx
     end
 
   end # module Helpers
