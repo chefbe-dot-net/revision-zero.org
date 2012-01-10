@@ -28,8 +28,8 @@ module RevisionZero
     
     get %r{^/(-?\d+)} do
       index = params[:captures].first.to_i
-      pass unless content = content_for(writings[index]["__url__"])
-      serve content
+      pass unless writing = writings[index]
+      serve content_for(writing["__url__"])
     end
 
     get %r{^/(.*)} do

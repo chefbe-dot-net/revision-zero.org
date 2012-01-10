@@ -22,4 +22,5 @@ redirect:
       to: /kernel-dot-spawn
       status: 301
 removed:
+    - /404
     - /book
