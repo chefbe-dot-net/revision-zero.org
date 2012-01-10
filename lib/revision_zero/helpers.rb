@@ -17,8 +17,10 @@ module RevisionZero
       }.sort{|h1,h2| h1["date"] <=> h2["date"]}
     end
 
-    def default_context
-      {"writings" => writings, "environment" => settings.environment}
+    def default_context(content = nil)
+      ctx = {"writings" => writings, "environment" => settings.environment}
+      ctx.merge!(content.to_h) if content
+      ctx
     end
     
     def content_for(url)
@@ -26,8 +28,7 @@ module RevisionZero
     end
 
     def serve(content)
-      ctx = default_context.merge(content.to_h)
-      WLang::file_instantiate templates_folder/"html.whtml", ctx
+      WLang::file_instantiate templates_folder/"html.whtml", default_context(content)
     end
 
   end # module Helpers
