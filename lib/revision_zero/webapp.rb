@@ -17,7 +17,7 @@ module RevisionZero
 
     get '/sitemap.xml' do
       content_type "application/xml"
-      WLang::file_instantiate templates_folder/"sitemap.whtml", default_context
+      wlang :sitemap
     end
 
     ############################################################## Normal routes

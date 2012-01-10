@@ -27,8 +27,13 @@ module RevisionZero
       Content.find(content_folder, url)
     end
 
+    def wlang(tpl, ctx = default_context)
+      tpl = templates_folder/"#{tpl}.whtml" if tpl.is_a?(Symbol)
+      WLang::file_instantiate tpl, ctx
+    end
+
     def serve(content)
-      WLang::file_instantiate templates_folder/"html.whtml", default_context(content)
+      wlang :html, default_context(content)
     end
 
   end # module Helpers
