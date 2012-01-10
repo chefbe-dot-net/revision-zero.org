@@ -1,7 +1,11 @@
 require 'wlang'
 require 'wlang/dialects/xhtml_dialect'
-require 'uri'
-require 'albino'
+
+class HTMLwithAlbino < Redcarpet::Render::HTML
+  def block_code(code, language)
+    Albino.colorize(code, language)
+  end
+end
 
 WLang::dialect('whtml', '.whtml') do
   encoders WLang::EncoderSet::XHtml
@@ -42,11 +46,6 @@ end
 
 WLang::dialect("active-markdown") do
 
-  rule "!!" do |parser,offset| 
-    text, reached = parser.parse(offset)
-    ["<p class=\"attention\">#{text}</p>", reached]
-  end
-
   rule '@' do |parser, offset|
     href, offset = parser.parse(offset)
     if parser.has_block?(offset)
@@ -71,25 +70,22 @@ WLang::dialect("active-markdown") do
   end
 
   rule "#<" do |parser, offset|
-    uri, lexer = nil
+    uri, lexer, text = nil
     uri, reached = parser.parse(offset, "wlang/uri")
     if parser.has_block?(reached)
       lexer = uri.to_sym
       text, reached = parser.parse_block(reached)
-      highlighted = Albino.colorize(text, lexer)
-      [highlighted, reached]
     else
       file = RevisionZero::WebApp.send(:content_folder)/uri
       if file.file?
         lexer = File.extname(file)[1..-1].to_sym
         lexer = :text if lexer == :md
-        highlighted = Albino.colorize(File.read(file), lexer)
-        [highlighted, reached]
+        text  = file.read
       else
-        text = parser.parse(offset, "wlang/dummy")[0]
         parser.error(offset, "no such file (#{file})")
       end
     end
+    ["```#{lexer}\n#{text}\n```", reached]
   end
   
   rule "!!" do |parser,offset| 
@@ -98,7 +94,11 @@ WLang::dialect("active-markdown") do
   end
   
   post_transform do |text|
-    Kramdown::Document.new(text).to_html
+    @markdown ||= begin
+      opts = {:fenced_code_blocks => true}
+      Redcarpet::Markdown.new(HTMLwithAlbino, opts)
+    end
+    @markdown.render(text)
   end
 
 end

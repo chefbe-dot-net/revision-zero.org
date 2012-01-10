@@ -35,13 +35,13 @@ As you can see below, the test passes. The execution time exhibits a beautiful l
 
 Not at all, because the assertion is trivially true. Therefore the test is useless, if not simply wrong.
 
-#<{ruby}{
+```ruby
 assert_performance_linear 0.99 do |n|
   n.times do
     fib(1000)
   end
 end
-}
+```
 
 Here is why:
 
