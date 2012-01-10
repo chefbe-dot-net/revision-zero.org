@@ -13,10 +13,10 @@ def normalize(text)
     debug(match, "1. ")
   end
   text.gsub!(/!!\{(.*?)\}/m) do |match|
-    text = $1
-    text = text[1...-1] if text =~ /^\*(.*)\*$/
-    text = "> " + text.split("\n").join("\n> ")
-    debug(match, text)
+    res = $1
+    res = res[1...-1] if res =~ /^\*(.*)\*$/
+    res = "> " + res.split("\n").join("\n> ")
+    debug(match, res)
   end
   text.gsub!(/^p\=\. ?!@{(.*?)}!/) do |match|
     debug(match, "![](#{$1})")
