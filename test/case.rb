@@ -5,6 +5,7 @@ require 'test/unit'
 require 'rack/test'
 class Case < Test::Unit::TestCase
   include Rack::Test::Methods
+  include Polygon::Helpers
   include RevisionZero::Helpers
 
   def app

@@ -2,7 +2,7 @@ require 'case'
 class RewritingTest < Case
 
   def setup
-    path = dynamic_folder/"rewriting.yaml"
+    path = dynamic/"rewriting.yaml"
     @rewriting = YAML.load(path.read)
     @redirects = Array(@rewriting["redirect"])
     @removed   = Array(@rewriting["removed"])

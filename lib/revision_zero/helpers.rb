@@ -1,14 +1,6 @@
 module RevisionZero
   module Helpers
 
-    [ :dynamic_folder, 
-      :public_folder, 
-      :templates_folder ].each do |methname|
-      define_method(methname) do
-        settings.send(methname)
-      end
-    end
-
     def content_loader
       Polygon::ContentLoader.new.
         enable_yaml!(".yml").
@@ -16,20 +8,20 @@ module RevisionZero
     end
 
     def root_content
-      Polygon::Content.new(dynamic_folder, content_loader)
+      Polygon::Content.new(dynamic, content_loader)
     end
 
     def path2content(path)
-      path && Polygon::Content.new(path, content_loader, dynamic_folder)
+      path && Polygon::Content.new(path, content_loader, dynamic)
     end
 
     def url2path(url)
       content_loader.extensions.each do |ext| 
-        file = dynamic_folder/"#{url}#{ext}"
+        file = dynamic/"#{url}#{ext}"
         return file if file.file?
       end
       content_loader.extensions.each do |ext| 
-        file = dynamic_folder/url/"index#{ext}"
+        file = dynamic/url/"index#{ext}"
         return file if file.file?
       end
       nil
@@ -40,7 +32,7 @@ module RevisionZero
     end
 
     def writings
-      dynamic_folder.glob("**/*.md").map{|file|
+      dynamic.glob("**/*.md").map{|file|
         path2content(file).to_hash
       }.sort{|h1,h2| h1["date"] <=> h2["date"]}
     end
@@ -55,7 +47,7 @@ module RevisionZero
     end
 
     def wlang(tpl, ctx = default_context)
-      tpl = templates_folder/"#{tpl}.whtml" if tpl.is_a?(Symbol)
+      tpl = templates/"#{tpl}.whtml" if tpl.is_a?(Symbol)
       WLang::file_instantiate tpl, ctx
     end
 

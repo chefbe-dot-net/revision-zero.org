@@ -76,7 +76,7 @@ WLang::dialect("active-markdown") do
       lexer = uri.to_sym
       text, reached = parser.parse_block(reached)
     else
-      file = RevisionZero::WebApp.send(:dynamic_folder)/uri
+      file = RevisionZero::WebApp.send(:dynamic)/uri
       if file.file?
         lexer = File.extname(file)[1..-1].to_sym
         lexer = :text if lexer == :md

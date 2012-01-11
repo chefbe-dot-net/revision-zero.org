@@ -59,7 +59,7 @@ module RevisionZero
     ########################################################### Rewriting routes
 
     get // do
-      rewriting = YAML.load((dynamic_folder/"rewriting.yaml").read)
+      rewriting = YAML.load((dynamic/"rewriting.yaml").read)
       url = request.path
       if entry = rewriting["redirect"].find{|e| e["from"] == url}
         redirect entry["to"], entry["status"] || 301
