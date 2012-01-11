@@ -12,7 +12,7 @@ class IndexPageTest < Case
 
   def test_stylesheets_should_respond
     body.scan %r{<link.*?href="(.*?)"} do |match|
-      get (css = match.first)
+      head (css = match.first)
       next unless internal?(css)
       assert_equal 200, status, "Stylesheet #{css} should respond"
       assert_match %r{text/css}, content_type, "Stylesheet #{css} should be text/css"
@@ -21,7 +21,7 @@ class IndexPageTest < Case
 
   def test_javascripts_should_respond
     body.scan %r{<script.*src="(.*?)"} do |match|
-      get (js = match.first)
+      head (js = match.first)
       next unless internal?(js)
       assert_equal 200, status, "Script #{js} should respond"
       assert_match %r{application/javascript}, content_type, "Javascript #{js} should be application/javascript"
