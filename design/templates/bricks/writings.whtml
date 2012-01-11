@@ -1,17 +1,3 @@
-<div id="navigation">
-  ?{knows?(:next)}{
-    <a class="nav enabled" id="leftnav" href="@{+{next}}"></a>
-  }{
-    <div class="nav disabled" id="leftnav"></div>
-  }
-  ?{knows?(:previous)}{
-    <a class="nav enabled" id="rightnav" href="@{+{previous}}"></a>
-  }{
-    <div class="nav disabled" id="rightnav"></div>
-  }
-  <div style="clear:both;"></div>
-</div>
-
 <nav id="writings">
     *{categories as c}{
         <span class="category-label">${c}</span>
