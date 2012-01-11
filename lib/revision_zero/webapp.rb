@@ -99,9 +99,5 @@ module RevisionZero
       'Sorry, an error occurred'
     end
 
-    ############################################################## Auto start
-
-    # start the server if ruby file executed directly
-    run! if app_file == $0
   end
 end
