@@ -1,4 +1,4 @@
-<div id="header">
+<header class="revzero">
   <div class="header-left">
     <h1><a href="@{/about}">Revision-Zero.org</a></h1>
     <h2>Talking about computer science</h2>
@@ -10,5 +10,5 @@
     <a href="http://revision-zero.org/rss" target="_blank"><img src="/images/rss.png"/></a>
   </div>
   <div class="header-clear"></div>
-</div>
+</header>
 

@@ -2,14 +2,13 @@
 body{font-family:corbel,'lucida grande',helvetica,sans-serif;font-size:16px;color:#212122;margin:auto;}
 a:hover{cursor:pointer;}
 #wrap{width:960px;margin:0 auto;}
-#header{width:690px;margin-left:240px;position:fixed;background:white;padding:15px;border-bottom:1px solid #212122;opacity:0.90;top:0px;}#header .header-left{float:left;}
-#header .header-right{float:right;}
-#header .header-clear{clear:both;}
-#header h1{font-size:35px;letter-spacing:-1px;color:#000;}
-#header h1 a{color:#3B8FE9;text-decoration:none;}
-#header h1 a:hover{color:#000;}
-#header h2{letter-spacing:-1px;padding:0 0 0 16px;font-size:20px;color:#000;padding-left:120px;font-style:italic;}
-#headermenu{display:none;}
+header.revzero{width:690px;margin-left:240px;position:fixed;background:white;padding:15px;border-bottom:1px solid #212122;opacity:0.90;top:0px;}header.revzero .header-left{float:left;}
+header.revzero .header-right{float:right;}
+header.revzero .header-clear{clear:both;}
+header.revzero h1{font-size:35px;letter-spacing:-1px;color:#000;}
+header.revzero h1 a{color:#3B8FE9;text-decoration:none;}
+header.revzero h1 a:hover{color:#000;}
+header.revzero h2{letter-spacing:-1px;padding:0 0 0 16px;font-size:20px;color:#000;padding-left:120px;font-style:italic;}
 .left{width:210px;padding:0px 15px;font-size:14px;position:fixed;}.left #writings{padding-top:60px;}.left #writings .category-label{line-height:22px;display:block;padding:2px 0px;margin:10px 0px 5px 0px;font-size:20px;border-bottom:1px dashed black;}
 .left #writings ul{list-style:none;padding-left:0px;}
 .left #writings ul li{padding-top:3px;}
