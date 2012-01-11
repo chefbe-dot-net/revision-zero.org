@@ -1,8 +1,8 @@
 *{padding:0;margin:0;}
 body{font-family:corbel,'lucida grande',helvetica,sans-serif;font-size:16px;color:#212122;margin:auto;}
 a:hover{cursor:pointer;}
-#wrap{width:940px;margin:0 auto;}
-#header{width:670px;margin-left:240px;position:fixed;background:white;padding:15px;border-bottom:1px solid #212122;opacity:0.90;top:0px;}#header .header-left{float:left;}
+#wrap{width:960px;margin:0 auto;}
+#header{width:690px;margin-left:240px;position:fixed;background:white;padding:15px;border-bottom:1px solid #212122;opacity:0.90;top:0px;}#header .header-left{float:left;}
 #header .header-right{float:right;}
 #header .header-clear{clear:both;}
 #header h1{font-size:35px;letter-spacing:-1px;color:#000;}
@@ -16,7 +16,7 @@ a:hover{cursor:pointer;}
 .left #writings ul li.current{font-weight:bold;}
 .left #writings a,.left #writings .left a:visited{text-decoration:none;color:#212122;}
 .left #writings a:hover{color:#A30600;font-weight:bold;}
-.middle{width:670px;padding:15px;padding-left:255px;text-align:justify;margin-bottom:120px;line-height:1.3em;}.middle article{padding-top:90px;}
+.middle{width:690px;padding:15px;padding-left:255px;text-align:justify;margin-bottom:120px;line-height:1.3em;}.middle article{padding-top:90px;}
 .middle h1{padding:10px 0px;font-size:30px;text-align:left;line-height:1.3em;}
 .middle h2{padding-top:20px;font-size:20px;}
 .middle h3{padding-top:15px;font-size:16px;}
@@ -34,8 +34,8 @@ a:hover{cursor:pointer;}
 .middle table tr td{vertical-align:top;text-align:justify;}
 .middle blockquote{text-align:justify;padding:0px 80px;font-style:italic;}
 .middle .highlight pre{padding:10px;margin:20px;background:#111111;font-size:15px;color:white;overflow:hidden;}
-#leave-a-comment{width:570px;margin:auto;}#leave-a-comment label,#leave-a-comment input,#leave-a-comment textarea{display:block;padding:2px;}
-#leave-a-comment input,#leave-a-comment textarea{margin-left:25px;width:555px;}
+#leave-a-comment{width:590px;margin:auto;}#leave-a-comment label,#leave-a-comment input,#leave-a-comment textarea{display:block;padding:2px;}
+#leave-a-comment input,#leave-a-comment textarea{margin-left:25px;width:575px;}
 #leave-a-comment label{margin-top:10px;margin-bottom:5px;}
 #leave-a-comment textarea{height:200px;}
 #leave-a-comment .button{margin-top:10px;width:100px;display:inline;}

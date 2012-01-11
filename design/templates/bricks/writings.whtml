@@ -1,12 +1,12 @@
 <nav id="writings">
-    *{categories as c}{
-        <span class="category-label">${c}</span>
-        <ul>
-          *{writings.select{|w| w.category == c}.reverse as w}{
-            <li class="?{w.__path__ == __path__}{current}{normal}">
-              @{${w.__url__}}{${w.short || w.title}}
-            </li> 
-          }
-        </ul>
-    }
+  *{categories as c}{
+    <span class="category-label">${c}</span>
+    <ul>
+      *{writings.select{|w| w.category == c}.reverse as w}{
+        <li class="?{w.__path__ == __path__}{current}{normal}">
+          @{${w.__url__}}{${w.short || w.title}}
+        </li> 
+      }
+    </ul>
+  }
 </nav>
