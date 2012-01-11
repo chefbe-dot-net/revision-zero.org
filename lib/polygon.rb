@@ -1,3 +1,4 @@
+require 'sinatra'
 require 'epath'
 module Polygon
 
@@ -14,3 +15,4 @@ module Polygon
 end # module Polygon
 require 'polygon/content_loader'
 require 'polygon/content'
+require 'polygon/base'

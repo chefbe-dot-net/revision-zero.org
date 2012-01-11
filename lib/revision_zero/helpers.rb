@@ -1,8 +1,7 @@
 module RevisionZero
   module Helpers
 
-    [ :root_folder, 
-      :dynamic_folder, 
+    [ :dynamic_folder, 
       :public_folder, 
       :templates_folder ].each do |methname|
       define_method(methname) do

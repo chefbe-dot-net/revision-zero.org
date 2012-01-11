@@ -1,16 +1,10 @@
 module RevisionZero
-  class WebApp < Sinatra::Base
+  class WebApp < Polygon::Base
     helpers RevisionZero::Helpers
 
     ############################################################## Configuration
     configure do
-      set :root_folder,      Path.backfind('.[config.ru]')
-      set :public_folder,    root_folder/:content/:static
-      set :dynamic_folder,   root_folder/:content/:dynamic
-      set :templates_folder, root_folder/:design/:templates
-      enable  :logging
-      enable  :raise_errors
-      disable :show_exceptions
+      set :root, Path.backfind('.[config.ru]')
     end
     
     configure(:production) do
