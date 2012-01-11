@@ -6,13 +6,17 @@ class Launch < Script(__FILE__, __LINE__)
   
   # Install the options
   options do |opt|
+    self.enable_logging = true
+    opt.on('--[no-]log', "Properly log in a file?") do |value|
+      self.enable_logging = value
+    end
     self.refresh_repo = true
-    opt.on('-r', '--[no-]refresh', "Issues a 'git remote update' first?") do 
-      self.refresh_repo = false
+    opt.on('--[no-]refresh', "Issues a 'git remote update' first?") do |value|
+      self.refresh_repo = value
     end
     self.open_browser = true
-    opt.on('-b', '--[no-]browser', "Open the browser automatically?") do 
-      self.open_browser = false
+    opt.on('--[no-]browser', "Open the browser automatically?") do |value|
+      self.open_browser = value
     end
     self.try = 0
     self.max = 500

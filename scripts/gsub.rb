@@ -5,6 +5,10 @@ class GSub < Script(__FILE__, __LINE__)
   attr_accessor :dry_run, :regexp, :folder, :pattern
 
   options do |opt|
+    self.enable_logging = false
+    opt.on('--[no-]log', "Properly log in a file?") do |value|
+      self.enable_logging = value
+    end
     self.dry_run = false
     opt.on('-d', '--dry-run', "Dry-run mode, do not touch files") do
       self.dry_run = true

@@ -7,17 +7,19 @@ require 'logger'
 
 module Script
   
+  attr_accessor :enable_logging
+  
   def root
     Path File.expand_path("../../", __FILE__)
   end
   
   def logger
-    @logger ||= Logger.new(root/:logs/"#{Quickl.command_name(self)}.log")
+    @logger ||= Logger.new(root/:logs/"#{Quickl.command_name(self)}.log") if enable_logging
   end
   
   def log(message, severity)
     puts message
-    logger.send(severity, message)
+    logger.send(severity, message) if enable_logging
     yield if block_given?
   end
   def debug(message, &block); log(message, :debug, &block); end
