@@ -1,8 +1,10 @@
 require 'yaml'
 require 'logger'
-require 'content'
 require 'uri'
+
+require 'polygon'
 require 'sinatra/base'
+
 require 'revision_zero/loader'
 require 'revision_zero/ext/hash'
 require 'revision_zero/ext/nocache'

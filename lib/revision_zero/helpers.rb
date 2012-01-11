@@ -1,4 +1,3 @@
-require 'content'
 module RevisionZero
   module Helpers
 
@@ -13,7 +12,7 @@ module RevisionZero
 
     def writings
       dynamic_folder.glob("**/*.md").map{|file|
-        Content.new(file).to_h
+        Polygon::Content.new(file).to_h
       }.sort{|h1,h2| h1["date"] <=> h2["date"]}
     end
     
@@ -27,7 +26,7 @@ module RevisionZero
     end
     
     def content_for(url)
-      Content.find(dynamic_folder, url)
+      Polygon::Content.find(dynamic_folder, url)
     end
 
     def wlang(tpl, ctx = default_context)
