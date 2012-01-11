@@ -37,19 +37,8 @@ module RevisionZero
       }.sort{|h1,h2| h1["date"] <=> h2["date"]}
     end
 
-    def default_context
-      ctx = {
-        "writings"   => writings, 
-        "environment" => settings.environment
-      }
-      ctx
-    end
-
-    def wlang(tpl, ctx = {})
-      tpl = templates/"#{tpl}.whtml" if tpl.is_a?(Symbol)
-      ctx = (ctx && ctx.to_hash) || {}
-      ctx = default_context.to_hash.merge(ctx)
-      WLang::file_instantiate tpl, ctx
+    def default_wlang_context
+      super.merge("writings" => writings)
     end
 
   end # module Helpers
