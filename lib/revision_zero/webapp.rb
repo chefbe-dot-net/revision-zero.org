@@ -6,7 +6,7 @@ module RevisionZero
     configure do
       set :root_folder,      Path.backfind('.[config.ru]')
       set :public_folder,    root_folder/:public
-      set :content_folder,   root_folder/:content
+      set :content_folder,   root_folder/:content/:dynamic
       set :templates_folder, root_folder/:templates
       enable  :logging
       enable  :raise_errors
