@@ -17,6 +17,7 @@ group :development do
   gem "rake", "~> 0.9.2"
   gem "rack-test", "~> 0.6.1"
   gem "quickl", "~> 0.4.2"
+  gem "json", :platforms => [:ruby_18]
 end
 
 group :production do
