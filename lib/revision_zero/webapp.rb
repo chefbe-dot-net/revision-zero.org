@@ -29,11 +29,6 @@ module RevisionZero
 
     ############################################################## Special routes
 
-    get '/sitemap.xml' do
-      content_type "application/xml"
-      wlang :sitemap
-    end
-
     get '/rss' do
       content_type "application/rss+xml"
       wlang :rss

@@ -12,6 +12,11 @@ module Polygon
       disable :show_exceptions
     end
 
+    get '/sitemap.xml' do
+      content_type "application/xml"
+      wlang :sitemap
+    end
+
     helpers Polygon::Helpers
   end # Base
 end # module Polygon
