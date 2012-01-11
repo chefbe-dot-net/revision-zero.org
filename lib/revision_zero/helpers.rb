@@ -37,22 +37,19 @@ module RevisionZero
       }.sort{|h1,h2| h1["date"] <=> h2["date"]}
     end
 
-    def default_context(content = nil)
+    def default_context
       ctx = {
         "writings"   => writings, 
         "environment" => settings.environment
       }
-      ctx.merge!(content.to_hash) if content
       ctx
     end
 
-    def wlang(tpl, ctx = default_context)
+    def wlang(tpl, ctx = {})
       tpl = templates/"#{tpl}.whtml" if tpl.is_a?(Symbol)
+      ctx = (ctx && ctx.to_hash) || {}
+      ctx = default_context.to_hash.merge(ctx)
       WLang::file_instantiate tpl, ctx
-    end
-
-    def serve(content)
-      wlang :html, default_context(content)
     end
 
   end # module Helpers
