@@ -55,18 +55,6 @@ module Polygon
       extensions.map{|ext| "index#{ext}"}
     end
 
-#    def find(root, offset)
-#      extensions.reverse.each do |ext| 
-#        path = root/"#{offset}#{ext}"
-#        return Content.new(path, root) if path.exist?
-#      end
-#      index_files.reverse.each do |index|
-#        path = root/offset/index
-#        return Content.new(path, root) if path.exist?
-#      end
-#      nil
-#    end
-
     def parent
       @parent ||= begin
         base, idx = self/"..", -1

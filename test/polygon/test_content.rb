@@ -29,16 +29,6 @@ module Polygon
                    @fixtures.index_files
     end
 
-#    def test_find
-#      assert_equal @fixtures/"index.yml", Content.find(@root, "")
-#      assert_equal @fixtures/"index.yml", Content.find(@root, "index")
-#      assert_equal @fixtures/"with_index_yml/index.yml", Content.find(@root, "with_index_yml")
-#      assert_equal @fixtures/"with_index_yml/say-hello.md", Content.find(@root, "with_index_yml/say-hello")
-#      assert_equal @fixtures/"with_index_md/index.md", Content.find(@root, "with_index_md")
-#      assert_nil Content.find(@root, "without_index")
-#      assert_nil Content.find(@root, "no-such-one")
-#    end
-
     def test_divide
       assert_equal @root/"index.yml", (@fixtures/"index.yml").path
       assert_equal @fixtures.root, (@fixtures/"index.yml").root
