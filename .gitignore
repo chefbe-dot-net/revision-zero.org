@@ -23,4 +23,5 @@ Thumbs.db
 logs/*
 tmp/*
 .bundle
+vendor
 vendor/bundle
