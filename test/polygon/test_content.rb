@@ -1,4 +1,6 @@
 require 'test/unit'
+require 'epath'
+require 'polygon'
 module Polygon
   class ContentTest < Test::Unit::TestCase
 

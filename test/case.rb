@@ -1,3 +1,4 @@
+Encoding.default_external = Encoding::UTF_8 if RUBY_VERSION > "1.9"
 ENV["RACK_ENV"] = "test"
 require 'revision_zero'
 require 'test/unit'

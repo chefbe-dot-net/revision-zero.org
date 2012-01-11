@@ -20,29 +20,24 @@ class RewritingTest < Case
 
   def test_removals
     @removed.each do |url|
-      puts "Checking removal of #{url}"
-      get url
-      assert_equal 410, 
-                   status, 
+      head url
+      assert_equal 410, status, 
                    "URL #{url} is marked as removed"
     end
   end
 
   def test_redirects
     @redirects.each do |h|
-      old, new, exp_status = h.values_at("from", "to", "status")
-      puts "Checking rewriting of #{old} -> #{new}"
+      oldone, newone, exp_status = h.values_at("from", "to", "status")
 
-      get old
-      assert_equal exp_status || 301, 
-                   status, 
-                   "URL #{old} is redirected permanently"
+      head oldone
+      assert_equal exp_status || 301, status, 
+                   "URL #{oldone} is redirected permanently"
 
-      if internal?(new)
-        get last_response.headers["Location"]
-        assert_equal expected_status(new), 
-                     status, 
-                     "URL #{new} is a valid new location"
+      if internal?(newone)
+        head last_response.headers["Location"]
+        assert_equal expected_status(newone), status, 
+                     "URL #{newone} is a valid new location"
       end
     end
   end

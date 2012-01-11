@@ -9,12 +9,32 @@ end
 
 desc %q{Run the website locally}
 task :development do
-  exec "ruby scripts/run.rb development"
+  exec "ruby scripts/launch.rb development"
 end
 
-desc %q{Run all client tests}
-task :test do
-  exec "bundle exec ruby -Ilib -Itest test/runall.rb"
+namespace :test do
+
+  desc %q{Test polygon helpers}
+  task :polygon do
+    system "bundle exec ruby -Ilib -Itest test/polygon/runall.rb"
+  end
+
+  desc %q{Test content}
+  task :content do
+    system "bundle exec ruby -Ilib -Itest test/content/runall.rb"
+  end
+
+  desc %q{Test services}
+  task :service do
+    system "bundle exec ruby -Ilib -Itest test/service/runall.rb"
+  end
+
+  desc %q{Test controllers}
+  task :controllers do
+    system "bundle exec ruby -Ilib -Itest test/controllers/runall.rb"
+  end
+
+  task :all => [:content, :service, :controllers, :polygon]
 end
 
-task :default => :test
+task :default => "test:all".to_sym
