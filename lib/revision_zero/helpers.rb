@@ -3,7 +3,7 @@ module RevisionZero
   module Helpers
 
     [ :root_folder, 
-      :content_folder, 
+      :dynamic_folder, 
       :public_folder, 
       :templates_folder ].each do |methname|
       define_method(methname) do
@@ -12,7 +12,7 @@ module RevisionZero
     end
 
     def writings
-      content_folder.glob("**/*.md").map{|file|
+      dynamic_folder.glob("**/*.md").map{|file|
         Content.new(file).to_h
       }.sort{|h1,h2| h1["date"] <=> h2["date"]}
     end
@@ -27,7 +27,7 @@ module RevisionZero
     end
     
     def content_for(url)
-      Content.find(content_folder, url)
+      Content.find(dynamic_folder, url)
     end
 
     def wlang(tpl, ctx = default_context)

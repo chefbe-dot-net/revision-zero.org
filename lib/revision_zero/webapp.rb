@@ -6,7 +6,7 @@ module RevisionZero
     configure do
       set :root_folder,      Path.backfind('.[config.ru]')
       set :public_folder,    root_folder/:content/:static
-      set :content_folder,   root_folder/:content/:dynamic
+      set :dynamic_folder,   root_folder/:content/:dynamic
       set :templates_folder, root_folder/:design/:templates
       enable  :logging
       enable  :raise_errors
@@ -65,7 +65,7 @@ module RevisionZero
     ########################################################### Rewriting routes
 
     get // do
-      rewriting = YAML.load((content_folder/"rewriting.yaml").read)
+      rewriting = YAML.load((dynamic_folder/"rewriting.yaml").read)
       url = request.path
       if entry = rewriting["redirect"].find{|e| e["from"] == url}
         redirect entry["to"], entry["status"] || 301
