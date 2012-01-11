@@ -32,7 +32,7 @@ header.revzero h2{letter-spacing:-1px;padding:0 0 0 16px;font-size:20px;color:#0
 .middle table tr td{padding:3px 10px 3px 0px;}
 .middle table tr td{vertical-align:top;text-align:justify;}
 .middle blockquote{text-align:justify;padding:0px 80px;font-style:italic;}
-.middle .highlight pre{padding:10px;margin:20px;background:#111111;font-size:15px;color:white;overflow:hidden;}
+.middle .highlight pre{padding:10px;margin:20px;background:#111111;font-size:13px;color:white;overflow:hidden;line-height:15px;}
 #leave-a-comment{width:590px;margin:auto;}#leave-a-comment label,#leave-a-comment input,#leave-a-comment textarea{display:block;padding:2px;}
 #leave-a-comment input,#leave-a-comment textarea{margin-left:25px;width:575px;}
 #leave-a-comment label{margin-top:10px;margin-bottom:5px;}
