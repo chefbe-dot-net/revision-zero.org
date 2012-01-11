@@ -5,7 +5,7 @@ module RevisionZero
     ############################################################## Configuration
     configure do
       set :root_folder,      Path.backfind('.[config.ru]')
-      set :public_folder,    root_folder/:public
+      set :public_folder,    root_folder/:content/:static
       set :content_folder,   root_folder/:content/:dynamic
       set :templates_folder, root_folder/:templates
       enable  :logging
