@@ -35,7 +35,7 @@ class Launch < Script(__FILE__, __LINE__)
   end
   
   def execute(argv)
-    abort help unless argv.size <= 1
+    abort options.to_s unless argv.size <= 1
     self.mode = (argv.first || "development").to_sym
     abort "Invalid mode #{mode}" unless config_ru.exist?
 
