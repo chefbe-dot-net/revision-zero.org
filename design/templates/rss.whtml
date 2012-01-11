@@ -9,7 +9,7 @@
 	      <item>
 	          <title>${w.title}</title>
 	          <description>
-	            &{~{w.text}}
+	            &{~{w.content}}
 	          </description>
 	          <pubDate>${w.date}</pubDate>
 	          <link>http://www.revision-zero.org/${w.__url__}</link>

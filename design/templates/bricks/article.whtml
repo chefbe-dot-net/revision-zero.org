@@ -4,7 +4,7 @@
   <div class="date">${date}</div>
   <div style="clear:both"></div>
 </header>
-~{text}
+~{content}
 <footer>
 <<+{comment.whtml share all}
 </footer>

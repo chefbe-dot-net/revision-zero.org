@@ -48,17 +48,17 @@ module RevisionZero
     ############################################################## Normal routes
 
     get "/" do
-      serve content_for(writings.last["__url__"])
+      serve url2content(writings.last["__url__"])
     end
     
     get %r{^/(-?\d+)} do
       index = params[:captures].first.to_i
       pass unless writing = writings[index]
-      serve content_for(writing["__url__"])
+      serve url2content(writing["__url__"])
     end
 
     get %r{^/(.*)} do
-      pass unless content = content_for(params[:captures].first)
+      pass unless content = url2content(params[:captures].first)
       serve content
     end
 
