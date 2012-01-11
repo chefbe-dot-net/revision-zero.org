@@ -21,7 +21,7 @@ header.revzero h2{letter-spacing:-1px;padding:0 0 0 16px;font-size:20px;color:#0
 .middle h3{padding-top:15px;font-size:16px;}
 .middle h2 a,.middle h2 a:visited,.middle h3 a,.middle h3 a:visited{color:#212122;text-decoration:none;}
 .middle h2 a:hover,.middle h3 a:hover{color:#A30600;text-decoration:underline;}
-.middle header .date{text-align:right;}
+.middle header .date{text-align:right;margin:0px;padding:0px;font-weight:bold;}
 .middle img{display:block;margin:auto;padding:25px 0px;text-align:center;}
 .middle p,.middle ul,.middle ol,.middle pre,.middle table{padding:15px 0px 0px 0px;}
 .middle ul,.middle ol{padding-left:45px;}
