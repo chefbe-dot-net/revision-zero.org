@@ -16,9 +16,12 @@ module RevisionZero
         Content.new(file).to_h
       }.sort{|h1,h2| h1["date"] <=> h2["date"]}
     end
-
+    
     def default_context(content = nil)
-      ctx = {"writings" => writings, "environment" => settings.environment}
+      ctx = {
+        "writings"   => writings, 
+        "environment" => settings.environment
+      }
       ctx.merge!(content.to_h) if content
       ctx
     end

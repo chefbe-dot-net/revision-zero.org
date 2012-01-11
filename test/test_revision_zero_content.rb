@@ -10,4 +10,13 @@ class RevZeroContentTest < Case
     end
   end
 
+  def test_categories
+    categories = YAML.load((content_folder/"index.yml").read)["categories"]
+    content_folder.glob("**/*.md").each do |file|
+      h = Content.new(file).to_h
+      assert_not_nil h["category"], "Writing #{file} has a category"
+      assert categories.include?(h["category"]), "Writing #{file} refers to an existing category"
+    end
+  end
+
 end
