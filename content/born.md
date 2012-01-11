@@ -2,7 +2,7 @@
 title: Welcome to Revision-Zero.org!
 short: Revision-Zero is born!
 date: 2009-01-10 18:16:00 +01:00
-category: Revision-Zero.org
+category: Blog
 keywords: []
 ---
 Welcome to revision-zero.org ! You are reading the really first revision of this web site. If you read this page you are probably asking yourself what this site is about ? It is about computer science, and only about that. So if you're not a computer scientist or somewhat interrested by computers, you probably won't find any useful information here. Otherwise, read on!

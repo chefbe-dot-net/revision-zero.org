@@ -2,7 +2,7 @@
 title: New look for Revision-Zero.org!
 short: New look, new life!
 date: 2010-02-07 10:10:00 +01:00
-category: Revision-Zero.org
+category: Blog
 keywords: []
 
 ---

@@ -2,7 +2,7 @@
 title: What is this blog about?
 short: About
 date: 2009-01-15 09:31:00 +01:00
-category: Revision-Zero.org
+category: Blog
 keywords: []
 
 ---

@@ -2,7 +2,7 @@
 title: Toward a static blog that looks dynamic
 short: Web Duck Typing
 date: 2009-01-11 17:35:00 +01:00
-category: Revision-Zero.org
+category: Blog
 keywords: 
 - duck typing
 ---

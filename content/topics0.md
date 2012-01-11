@@ -2,7 +2,7 @@
 title: What are we talking about?
 short: Technical topics
 date: 2009-01-14 17:55:00 +01:00
-category: Revision-Zero.org
+category: Blog
 keywords: []
 
 ---

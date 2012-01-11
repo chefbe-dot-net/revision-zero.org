@@ -2,7 +2,7 @@
 title: Skeleton-driven coding with Noe
 short: Skeleton-driven coding
 date: 2011-01-14 16:51:00 +01:00
-category: Architecture
+category: Ruby
 keywords: 
 - skeleton-driven coding
 - project skeleton

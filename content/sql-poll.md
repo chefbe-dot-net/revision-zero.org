@@ -2,7 +2,7 @@
 title: A quick SQL poll
 short: Quick SQL poll
 date: 2011-02-25 19:59:00 +01:00
-category: Database
+category: Databases
 ---
 Today's writing is really short and is a poll. So please use the comment feature to answer it. Let consider the tables below for a relational schema about people owning pictures (I suppose that a BLOB column could hold the picture, but this is not important here):
 

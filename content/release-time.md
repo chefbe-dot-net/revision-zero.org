@@ -2,7 +2,7 @@
 title: Open-sources libraries available
 short: Release Time!
 date: 2009-03-13 10:17:00 +01:00
-category: Free Software
+category: Ruby
 keywords: 
 - open source
 - ruby libraries

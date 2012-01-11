@@ -1,7 +1,7 @@
 --- 
 title: WLang (Part I)
 date: 2009-01-18 13:35:00 +01:00
-category: Web
+category: Ruby
 keywords: 
 - templating engine
 - code generation
