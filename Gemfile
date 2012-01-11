@@ -16,6 +16,7 @@ group :development do
   gem "launchy", "~> 2.0.5"
   gem "rake", "~> 0.9.2"
   gem "rack-test", "~> 0.6.1"
+  gem "quickl", "~> 0.4.2"
 end
 
 group :production do
