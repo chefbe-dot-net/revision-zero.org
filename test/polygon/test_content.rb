@@ -8,6 +8,22 @@ module Polygon
       @root = Path.dir/"fixtures"
       @fixtures = Content.new(@root, @root)
     end
+    
+    def test_loader
+      fixtures = @root/:data
+
+      assert_equal({"kind" => "yml"},  Content.read(fixtures/"data.yml"))
+      assert_equal({"kind" => "yaml"}, Content.read(fixtures/"data.yaml"))
+      assert_equal({"kind" => "json"}, Content.read(fixtures/"data.json"))
+      assert_equal({"kind" => "rb"},   Content.read(fixtures/"data.rb"))
+      assert_equal({"kind" => "ruby"}, Content.read(fixtures/"data.ruby"))
+
+      assert_equal({"kind" => "md", "text" => "This is the text"}, Content.read(fixtures/"data.md"))
+      assert_equal({"text" => "This is the text"}, Content.read(fixtures/"text.md"))
+
+      assert_raise(Errno::ENOENT){ Content.read(fixtures/"no-such-one.yml") }
+      assert_raise(RuntimeError, /Unable to load.*unrecognized extension/){ Content.read(fixtures/"data.notarecognized") }
+    end
 
     def test_find
       assert_equal @fixtures/"index.yml", Content.find(@root, "")

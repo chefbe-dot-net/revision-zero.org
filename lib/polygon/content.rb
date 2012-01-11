@@ -3,6 +3,39 @@ require 'epath'
 module Polygon
   class Content
 
+    class << self
+
+      LOADERS = {}
+    
+      def register(*extensions, &loader)
+        LOADERS.merge! Hash[extensions.map{|ext| [ext, loader]}]
+      end
+
+      def loader(file)
+        LOADERS[Path(file).extname]
+      end
+      
+      def read(file)
+        file = Path(file)
+        raise "Unable to load #{file.basename} (unrecognized extension)" unless l = loader(file)
+        l.call(file)
+      end
+      
+      def load_md_content(f)
+        content = f.read
+        if content =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
+          YAML::load($1).merge("text" => $')
+        else
+          {"text" => content}
+        end
+      end
+      
+    end
+    self.register(".yml", ".yaml"){|f| require 'yaml'; YAML.load(f.read)               }
+    self.register(".json")        {|f| require 'json'; JSON.load(f.read)               }
+    self.register(".rb", ".ruby") {|f| ::Kernel.eval(f.read, TOPLEVEL_BINDING, f.to_s) }
+    self.register(".md")          {|f| self.load_md_content(f)                         }
+
     EXTENSIONS  = [".yml", ".md"]
     INDEX_FILES = EXTENSIONS.map{|ext| "index#{ext}"}
 
@@ -103,21 +136,10 @@ module Polygon
     end
 
     def data
-      data = case ext = path.extname
-      when ".yml", ".yaml"
-        YAML.load(path.read)
-      when ".md"
-        blocks = path.read.split(/---\s*\r?\n/)
-        text   = blocks.pop
-        data   = YAML.load(blocks.join("---\n"))
-        data   = {} unless data
-        data["text"] = text
-        data
-      else
-        raise "Unexpected extension #{ext}"
-      end
-      data.merge("__path__" => path, 
-                 "__url__" => path.relative_to(root).to_s[0..-(ext.length+1)])
+      Content.read(path).merge({
+        "__path__" => path, 
+        "__url__"  => path.relative_to(root).to_s[0..-(path.extname.length+1)]
+      })
     end
 
   end # class Content
