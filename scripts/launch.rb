@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative 'script'
 class Launch < Script(__FILE__, __LINE__)
 
