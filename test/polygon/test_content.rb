@@ -89,11 +89,11 @@ module Polygon
       assert_equal expected, content.to_hash(false)
     end
 
-#    def test_it_splits_md_files_correctly
-#      content = (@fixtures/"without_index"/"hello.md").to_h
-#      assert_equal "Welcome!", content["title"]
-#      assert_match /^Welcome to/, content["text"]
-#    end
+   def test_it_splits_md_files_correctly
+     content = (@fixtures/"without_index"/"hello.md").to_hash
+     assert_equal "Welcome!", content["title"]
+     assert_match /^Welcome to/, content["content"]
+   end
 
   end
 end
