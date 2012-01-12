@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/blambeau/epath.git
-  revision: 77ed595c138814be838f4943d27938228814e62a
+  revision: 13a8d104f41b706dfb0aae57ce0c7ff364e6cc43
   specs:
     epath (0.0.2)
 
@@ -31,7 +31,7 @@ GEM
     eventmachine (1.0.0.beta.4)
     http (0.0.2)
     i18n (0.6.0)
-    json (1.6.1)
+    json (1.6.4)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     mail (2.3.0)
