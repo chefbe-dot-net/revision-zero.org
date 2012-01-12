@@ -3,6 +3,7 @@ module RevisionZero
 
     def content_loader
       Polygon::ContentLoader.new.
+        enable_ruby!(".rb").
         enable_yaml!(".yml").
         enable_yaml_front_matter!(".md")
     end
