@@ -13,7 +13,7 @@ module RevisionZero
     end
 
     def path2content(path)
-      path && Polygon::Content.new(path, content_loader, dynamic)
+      path && root_content.entry(path)
     end
 
     def url2path(url)

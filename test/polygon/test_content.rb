@@ -14,6 +14,10 @@ module Polygon
     def assert_entry(entry)
       assert_instance_of Content::Entry, entry
     end
+    
+    def test_initialize
+      assert_instance_of Content, Content.new(@root)
+    end
 
     def test_entry_should_be_a_factory
       entry = @content.entry(@root/"index.yml")
