@@ -1,19 +1,20 @@
 require 'helper'
 module Polygon
 
-  class Content
-    public :extensions, :index_files, :parent, :ancestors_or_self
+  class Content::Entry
+    public :extensions, :index_files, :parent, :ancestors_or_self, :loader
   end
 
-  class ContentTest < Test::Unit::TestCase
+  class ContentEntryTest < Test::Unit::TestCase
     include Helper
 
     def setup
-      @root   = Path.dir/"fixtures"
+      @root   = Path.dir/"../fixtures"
       @loader = ContentLoader.new
       @loader.enable_yaml!(".yml")
       @loader.enable_yaml_front_matter!(".md")
-      @fixtures = Content.new(@root, @loader)
+      @content  = Content.new(@root, @loader)
+      @fixtures = Content::Entry.new(@content, @root)
     end
 
     def test_loader
@@ -31,7 +32,6 @@ module Polygon
 
     def test_divide
       assert_equal @root/"index.yml", (@fixtures/"index.yml").path
-      assert_equal @fixtures.root, (@fixtures/"index.yml").root
       assert_equal @loader, (@fixtures/"index.yml").loader
     end
 
