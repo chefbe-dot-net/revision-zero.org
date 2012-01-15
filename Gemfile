@@ -8,6 +8,7 @@ gem "albino", "~> 1.3.3"
 gem "mail", "~> 2.3.0"
 gem "grit", :git => "git://github.com/blambeau/grit.git"
 gem "websync", :git => "git://github.com/blambeau/websync.git"
+gem "polygon", :git => "git://github.com/blambeau/polygon.git"
 
 group :development do
   gem "eventmachine", "~> 1.0.0.beta.4"
@@ -18,7 +19,4 @@ group :development do
   gem "rack-test", "~> 0.6.1"
   gem "quickl", "~> 0.4.2"
   gem "json", :platforms => [:ruby_18]
-end
-
-group :production do
 end

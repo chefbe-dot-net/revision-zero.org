@@ -14,12 +14,6 @@ end
 
 namespace :test do
 
-  desc %q{Test polygon helpers}
-  task :polygon do
-    system "bundle exec ruby -Ilib -Itest test/polygon/runall.rb"
-    $?
-  end
-
   desc %q{Test content}
   task :content do
     system "bundle exec ruby -Ilib -Itest test/content/runall.rb"
@@ -38,7 +32,7 @@ namespace :test do
     $?
   end
 
-  task :all => [:content, :service, :controllers, :polygon]
+  task :all => [:content, :service, :controllers]
 end
 
 task :default => "test:all".to_sym
