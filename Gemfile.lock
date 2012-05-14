@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/blambeau/epath.git
-  revision: 13a8d104f41b706dfb0aae57ce0c7ff364e6cc43
+  revision: 9393a8c3bf9a3dacc3c86283690df4c7e6d67502
   specs:
     epath (0.0.2)
 
@@ -15,12 +15,13 @@ GIT
 
 GIT
   remote: git://github.com/blambeau/polygon.git
-  revision: a5b3ba5870e57f9a200d55de0536458334ef6f34
+  revision: 2e2d8303eafea4bb0657a8e9103aca25a49bf87a
   specs:
     polygon (0.0.1)
       epath (~> 0.0.1)
       json
       sinatra (~> 1.3.1)
+      wlang (~> 0.10.2)
 
 GIT
   remote: git://github.com/blambeau/websync.git
@@ -32,26 +33,26 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    addressable (2.2.6)
+    addressable (2.2.8)
     albino (1.3.3)
       posix-spawn (>= 0.3.6)
-    daemons (1.1.5)
+    daemons (1.1.8)
     diff-lcs (1.1.3)
     eventmachine (1.0.0.beta.4)
     http (0.0.2)
     i18n (0.6.0)
-    json (1.6.4)
+    json (1.7.3)
     launchy (2.0.5)
       addressable (~> 2.2.6)
-    mail (2.3.0)
+    mail (2.3.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.17.2)
+    mime-types (1.18)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
-    quickl (0.4.2)
-    rack (1.4.0)
+    quickl (0.4.3)
+    rack (1.4.1)
     rack-protection (1.2.0)
       rack
     rack-test (0.6.1)
