@@ -19,6 +19,4 @@ if you prefer a personal answer.</p>
   <input type="submit" value="Submit" class="button"/>
   <div class="feedback"></div>
 </form>
-<script type="text/javascript">
-$(document).ready(function(){ $("form#leave-a-comment").submit(leave_a_comment); });
-</script> 
+

@@ -42,5 +42,8 @@
   <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 <![endif]-->
 
+<script type="text/javascript">
+$(document).ready(function(){ $("form#leave-a-comment").submit(leave_a_comment); });
+</script>
 </body>
 </html>
