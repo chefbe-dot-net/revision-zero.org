@@ -10,9 +10,9 @@ keywords:
 - relational model
 - information systems
 ---
-> This post is a response to recent ORM-related posts such as @{http://www.javacodegeeks.com/2012/05/orm-haters-dont-get-it.html}{this one} or @{http://martinfowler.com/bliki/OrmHate.html}{that one}. I'm not particularly happy to participate to this very old flame war. However, I recently discovered that some developers are simply not aware **at all** of certain ORM weaknesses, such as the huge number of queries that their naïve use may generate to the database.
+> This post continues the recent discussion in ORM-related posts such as @{http://www.javacodegeeks.com/2012/05/orm-haters-dont-get-it.html}{this one} or @{http://martinfowler.com/bliki/OrmHate.html}{that one}. I'm not particularly happy to participate to this very old flame war. However, I recently discovered that some developers (clearly not the authors of the posts mentioned) are simply not aware **at all** of certain ORM weaknesses, such as the huge number of queries that their naïve use may generate to the database.
 
-> My original motivation in writing this was to write some basic material for the latter developers. That happened exactly the same day the first post above appeared on hacker news. In my personal reasoning about all of this, I ended up with this post. As it provides some background that is generally missing in the discussion, I decided to publish it anyway.
+> My original motivation in writing this was actually to write some high-level material for the latter developers. That happened exactly the same day the first post above appeared on hacker news. In my personal reasoning about all of this, I ended up with this post. As it provides some background that is generally missing in the discussion, I decided to publish it here.
 
 Object-Relational Mappers (ORMs) are a strange beast. They tend to strongly divide the software engineering community. So called "haters" complain that ORMs are slow, generate huge amounts of inefficient queries, make migrations more difficult than necessary, etc. Defenders respond to the haters that they misuse ORMs and write naïve mappings and algorithms.
 
