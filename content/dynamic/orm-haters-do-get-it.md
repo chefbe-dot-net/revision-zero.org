@@ -110,7 +110,7 @@ Congratulations to ORM developers then for providing such constructs! You're rei
 
 If you continue with the same reasoning, you'll end up avoiding all work on individuals. For example, you'll want to merge the `do_some_task` code upstream, because it contains another iteration that contains another condition, and so on. But in doing so, you will simply observe that it leads to rejecting object oriented programming in the first place. That is, it is strictly incompatible with the wish to have an object model for capturing data (observe that I don't reject object oriented programming as a whole but only for representing data). Object oriented programming IS about individuals.
 
-For another example of such OO repudiation, observe that in Ruby on Rails' ORM (namely ActiveRecord), the above "`update ... such that`" feature is strictly incompatible with update callbacks. The latter are not activated when performing mass updates. In other words, either you apply the object-oriented way of thinking at the cost of flooding your database with queries. Or you preserve your database, at the cost of you're object-oriented way of thinking.
+For another example of such OO repudiation, observe that in Ruby on Rails' ORM (namely ActiveRecord), the above "`update ... such that`" feature is strictly incompatible with update callbacks. The latter are not activated when performing mass updates. In other words, either you apply the object-oriented way of thinking at the cost of flooding your database with queries. Or you preserve your database, at the cost of the object-oriented way of thinking.
 
 ## Conclusion
 
