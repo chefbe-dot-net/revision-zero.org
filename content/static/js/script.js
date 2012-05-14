@@ -2,7 +2,6 @@ function leave_a_comment() {
   $.ajax({type: "POST", 
           url: "/leave-comment", 
           data: $("form#leave-a-comment").serialize(), 
-          dataType: "text/plain",
     error: function(data, textStatus, XMLHttpRequest) {
       $('form#leave-a-comment .feedback').html('<p class="ko">Sorry, an error occured. please try later!</p>');
     },

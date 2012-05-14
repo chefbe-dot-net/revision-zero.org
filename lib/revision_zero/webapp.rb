@@ -76,7 +76,7 @@ module RevisionZero
       sender ||= "info@revision-zero.org"
       
       unless nick and comment and writing
-        400
+        "ko"
       else
         Mail.deliver do
              from(sender)
@@ -84,6 +84,7 @@ module RevisionZero
           subject("[revision-zero.org] Comment from #{nick} (#{writing})")
              body(comment)
         end
+        "ok"
       end
     end
 
