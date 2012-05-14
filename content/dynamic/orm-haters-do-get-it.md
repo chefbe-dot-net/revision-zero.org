@@ -20,7 +20,7 @@ I would not consider myself an ORM hater, at least not one of those described ab
 
 > You simply **can't** use an ORM the **right** way
 
-You can use them in the _intended_ way but unfortunately there is no _right_ way. The reason is that the ORM approach is intrinsically flawed. This is the claim I'd like to to discuss today.
+You can use them in the _intended_ way but unfortunately there is no _right_ way. The reason is that the ORM approach is intrinsically flawed. This is the claim I'd like to discuss today.
 
 You've probably heard about the so called _impedence mismatch_. This term denotes the difficulty to reconcile the Object and Relational approaches to data management, that is, to reconcile tables with classes, records with objects, classes with SQL data types, and so on. This is the overall objective of Object Relational Mappers.
 
