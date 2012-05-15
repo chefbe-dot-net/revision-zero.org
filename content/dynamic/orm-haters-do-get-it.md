@@ -86,7 +86,7 @@ SELECT ... FROM ... WHERE meets_some_condition
 
 ## Back to the example
 
-Let us now get back to the example above. In particular to the "optimisation" process that led to the second version with a "`for each i  ... such that ...`". The second form is much smarter because an imperative algorithm has been translated (somewhat under the cover) to a declarative intent. As a result, that declarative intent can be translated to SQL (a declarative language itself) by the ORM. The net effect is that the queries generated to evaluate the "`if i.meets_some_condition` on each individual have been trimmed in the process. 
+Let us now get back to the example above. In particular to the "optimisation" process that led to the second version with a "`for each i  ... such that ...`". The second form is much smarter because an imperative algorithm has been translated (somewhat under the cover) to a declarative intent. As a result, that declarative intent can be translated to SQL (a declarative language itself) by the ORM. The net effect is that the queries generated to evaluate the "`if i.meets_some_condition`" on each individual have been trimmed in the process.
 
 In other words, a naïve iteration has been replaced by a smarter one. This is a typical optimisation process... that developers must take care of doing manually by avoiding the `if` construction. More precisely, by moving the `if` construct from the hosting language (ruby or java, for instance) to the query language (the special ORM construct for creating queries, which must logically be seen as a distinct language).
 
