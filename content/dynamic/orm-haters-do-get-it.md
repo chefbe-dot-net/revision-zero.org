@@ -10,9 +10,9 @@ keywords:
 - relational model
 - information systems
 ---
-> This post continues the recent discussion in ORM-related posts such as @{http://www.javacodegeeks.com/2012/05/orm-haters-dont-get-it.html}{this one} or @{http://martinfowler.com/bliki/OrmHate.html}{that one}. I'm not particularly happy to participate to this very old flame war. However, I recently discovered that some developers (clearly not the authors of the posts mentioned) are simply not aware **at all** of certain ORM weaknesses, such as the huge number of queries that their naïve use may generate to the database.
+> This post continues the recent discussion (re-)initiated in ORM-related posts such as @{http://www.javacodegeeks.com/2012/05/orm-haters-dont-get-it.html}{this one} or @{http://martinfowler.com/bliki/OrmHate.html}{that one}. I'm not particularly happy to participate to this very old flame war. However, I recently discovered that some developers (clearly not the authors of the posts mentioned above) are simply not aware **at all** of certain ORM weaknesses, such as the huge number of queries that their naïve use may generate to the database.
 
-> My original motivation in writing this was actually to write some high-level material for the latter developers. That happened exactly the same day the first post above appeared on hacker news. In my personal reasoning about all of this, I ended up with this post. As it provides some background that is generally missing in the discussion, I decided to publish it here.
+> My original motivation in writing this was actually to provide those developers with some high-level material on the topic. That happened the same day the first post above appeared on hacker news. Thinking about all of this, I ended up with this essay. As it provides some background that is generally missing in other discussions, I decided to publish it here.
 
 Object-Relational Mappers (ORMs) are a strange beast. They tend to strongly divide the software engineering community. So called "haters" complain that ORMs are slow, generate huge amounts of inefficient queries, make migrations more difficult than necessary, etc. Defenders respond to the haters that they misuse ORMs and write naïve mappings and algorithms.
 
@@ -58,7 +58,7 @@ end
 
 Almost all ORMs provide such a "`for each ... such that ...`" construct. Using it is better because it tends to iterate only objects of interest for the task at hand and, more importantly, it generates far fewer queries to the database (it is left as an exercise to the reader to check this claim). In the ruby on rails community, for example, not using such higher-level construct is @{http://www.mikeperham.com/2012/05/05/five-common-rails-mistakes/}{considered a common mistake}.
 
-The reason why the second algorithm generates fewer queries is that the "`for each ... such that ...`" can usually be translated to SQL by the ORM. This is of course smarter than relying on an `if` in the object oriented language, that tend to generate a new query for each non trivial `meets_some_condition` on individuals.
+The reason why the second algorithm generates fewer queries is that the "`for each ... such that ...`" can usually be translated to SQL by the ORM. This is of course smarter than relying on an `if` in the object oriented language, that tends to generate a new query for each non trivial `meets_some_condition` on individuals.
 
 Unfortunately, even with such "better" ways, you still end up thinking in terms of individuals (`do_some_task` is still sent to each individual of interest). This is the "object way of thinking", you cannot escape this without repudiating object oriented programming itself. We'll come back to this point a bit later, when analyzing a further improvement of the example above.
 
@@ -106,7 +106,7 @@ update every `i` SUCH THAT i.meets_some_condition
 
 And indeed, ORMs usually provide such higher-level constructs as well. And not using them is @{http://www.mikeperham.com/2012/05/05/five-common-rails-mistakes/}{considered a common mistake}. 
 
-Congratulations to ORM developers then for providing such constructs! You're reinventing the wheel. More precisely, you are in the process of rediscovering Codd's original motivation. But you are 40 years late. The ORM state of affairs has a different taste than the original CODASYL background, of course, but seems very similar to me, don't you agree?
+Congratulations to ORM developers for providing such constructs! You're reinventing the wheel. More precisely, you are in the process of rediscovering Codd's original motivation. But you are 40 years late. The ORM state of affairs has a different taste than the original CODASYL background, of course, but seems very similar to me, don't you agree?
 
 If you continue with the same reasoning, you'll end up avoiding all work on individuals. For example, you'll want to merge the `do_some_task` code upstream, because it contains another iteration that contains another condition, and so on. But in doing so, you will simply observe that it leads to rejecting object oriented programming in the first place. That is, it is strictly incompatible with the wish to have an object model for capturing data (observe that I don't reject object oriented programming as a whole but only for representing data). Object oriented programming IS about individuals.
 
