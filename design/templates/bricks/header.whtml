@@ -1,6 +1,6 @@
 <header class="revzero">
   <div class="header-left">
-    <h1><a href="@{/about}">Revision-Zero.org</a></h1>
+    <h1>@{/about}{Revision-Zero}</a></h1>
     <h2>Talking about computer science</h2>
   </div>
   <div class="header-right">

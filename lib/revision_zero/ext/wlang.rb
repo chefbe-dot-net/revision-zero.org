@@ -24,9 +24,9 @@ WLang::dialect('whtml', '.whtml') do
     href, offset = parser.parse(offset)
     if parser.has_block?(offset)
       label, offset = parser.parse_block(offset)
-      ["<a href='#{href}'>#{label}</a>", offset]
+      [RevisionZero.makelink(href, label), offset]
     else 
-      [href, offset]
+      [RevisionZero.makelink(href), offset]
     end
   end
 
@@ -50,9 +50,9 @@ WLang::dialect("active-markdown") do
     href, offset = parser.parse(offset)
     if parser.has_block?(offset)
       label, offset = parser.parse_block(offset)
-      ["<a href='#{href}'>#{label}</a>", offset]
+      [RevisionZero.makelink(href, label), offset]
     else 
-      [href, offset]
+      [RevisionZero.makelink(href), offset]
     end
   end
 
