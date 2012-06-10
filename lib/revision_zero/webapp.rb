@@ -37,8 +37,8 @@ module RevisionZero
     ############################################################## Normal routes
 
     get "/" do
-      content = url2content(writings.last["__url__"])
-      wlang :html, content
+      url = writings.last["__url__"]
+      redirect to(url)
     end
     
     get %r{^/(-?\d+)} do
