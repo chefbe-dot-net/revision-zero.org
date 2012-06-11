@@ -14,7 +14,10 @@ class Case < Test::Unit::TestCase
   alias :settings :app
 
   def internal?(link)
-    link && !(link =~ /^(https?|ftp|mailto):/) && !(link =~ /ajax.googleapis.com/)
+    link &&
+    !(link =~ /^(https?|ftp|mailto):/) &&
+    !(link =~ /ajax.googleapis.com/) &&
+    !(link =~ /platform.twitter.com/)
   end
 
   [:status, :content_type, :body].each do |methname|
