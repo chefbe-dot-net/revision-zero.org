@@ -8,7 +8,7 @@ gem "albino", "~> 1.3.3"
 gem "mail", "~> 2.3.0"
 gem "grit",    :git => "git://github.com/blambeau/grit.git"
 gem "websync", :git => "git://github.com/blambeau/websync.git"
-gem "polygon", :git => "git://github.com/blambeau/polygon.git"
+gem "polygon", "~> 0.0.1"
 
 group :development do
   gem "eventmachine", "~> 1.0.0.beta.4"
