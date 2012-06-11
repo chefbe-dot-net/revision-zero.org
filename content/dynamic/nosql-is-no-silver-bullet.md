@@ -1,6 +1,6 @@
 --- 
-title: No Silver Bullet - Essence and Accidents in Database Management
-short: No Silver Bullet for Databases
+title: NoSQL is No Silver Bullet
+short: NoSQL is No Silver Bullet
 date: 2012-06-10 11:43:00 +01:00
 category: Databases
 keywords: 
@@ -9,7 +9,7 @@ keywords:
 - NoSQL
 - relational model
 ---
-You've recognized the title of this post, borrowed from @{http://people.eecs.ku.edu/~saiedian/Teaching/Sp08/816/Papers/Background-Papers/no-silver-bullet.pdf}{Fred Brooks' classical essay} in sofware engineering. In his paper, Brooks argues that software engineering difficulties are either _essential_ or _accidental_. Essential difficulties are intrinsic to the software construction task; they are therefore very hard to tackle or remove. Accidental difficulties are artificial barriers that can be removed with better technologies and tools. Provided that 9/10 of the engineering effort is actually spent tackling accidental difficulties, there is very little hope for an important gain in productivity thanks to new technologies, hence _no silver bullet_ for killing the software engineering werewolf.
+You known the "No Silver Bullet" expression, borrowed from @{http://people.eecs.ku.edu/~saiedian/Teaching/Sp08/816/Papers/Background-Papers/no-silver-bullet.pdf}{Fred Brooks' classical essay} in sofware engineering. In his paper, Brooks argues that software engineering difficulties are either _essential_ or _accidental_. Essential difficulties are intrinsic to the software construction task; they are therefore very hard to tackle or remove. Accidental difficulties are artificial barriers that can be removed with better technologies and tools. Provided that 9/10 of the engineering effort is actually spent tackling accidental difficulties, there is very little hope for an important gain in productivity thanks to new technologies, hence _no silver bullet_ for killing the software engineering werewolf.
 
 Well known. Yet, what is true in software engineering is also true in database management. Surprinsingly however, every new database technology comes with the hope that a silver bullet has been found, one that will eventually make data management trivial. Such hope was present when people predicted the advent of Object-Oriented and XML databases a few years ago; in my opinion, it also underlies many writings about NoSQL databases nowadays.
 

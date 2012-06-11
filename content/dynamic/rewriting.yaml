@@ -21,6 +21,9 @@ redirect:
     - from: /kernel_dot_spawn
       to: /kernel-dot-spawn
       status: 301
+    - from: /no-silver-bullet-in-database-management
+      to: /nosql-is-no-silver-bullet
+      status: 301
 removed:
     - /404
     - /book
