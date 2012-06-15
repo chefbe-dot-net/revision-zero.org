@@ -1,6 +1,6 @@
 --- 
 title: Please Be Kind With My Path, Callee!
-short: Be Kind With My Path
+short: Be Kind With Paths, Callee!
 date: 2012-06-15 09:06:00 +01:00
 category: Ruby
 keywords: 
