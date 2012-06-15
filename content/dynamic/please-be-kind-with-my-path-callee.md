@@ -10,7 +10,22 @@ In almost every ruby project, we end up manipulating paths in some way. If not i
 
 In my opinion, ruby itself provides rather poor tools for manipulating paths: `File.join`, `File.dirname`, `File.extname`, etc. Also `Pathname`. But it belongs to the standard library, not to the core. In addition for some needed refactoring and enhancement, `Pathname` is not a very idomatic way to capture paths, as far as I know. In the community, the idiomatic way to capture a path seems to be a String, period.
 
-The situation is a bit more complicated. Stuff could hopefully be slightly improved provided that we have an agreement on how path are to be recognized. This post is thus a request for comments about such an agreement!
+The situation is a bit more complicated. Stuff could hopefully be slightly improved provided that we have an agreement on how path are to be recognized. My proposal can be summarized as follows:
+
+> **If you write a library that expects a path argument in its public API, please implement the logic below**
+
+#<{ruby}{
+  def callee(arg)
+    path   = arg.path    if arg.respond_to?(:path)
+    path ||= arg.to_path if arg.respond_to?(:to_path)
+    path ||= arg.to_str  if arg.respond_to?(:to_str)
+    raise "Invalid path `#{arg}`" unless path
+
+    # ... do something with path
+  end
+}
+
+The code above recognizes most instances of current path manipulation libraries, notably `Pathname` under both ruby 1.8.x and 1.9.x. This rest of this post explains why I ended up using that particular code, but is in fact a request for an agreement! Thanks, callees!
 
 ## A caller/callee contract...
 
@@ -93,16 +108,18 @@ In @{https://github.com/mjijackson/citrus}{Citrus}, Mickael Jackson's parsing ex
 More recently, in a pull request to @{https://github.com/sinatra/sinatra}{Sinatra}, I naturally ended up @{https://github.com/blambeau/sinatra/blob/53846acac5e1d587690cfe32b9c1ac54ffcc3713/lib/sinatra/base.rb#L756-761}{with the following logic}:
 
 #<{ruby}{
-  def path_as_string(path)
-    path   = view.path    if view.respond_to?(:path)
-    path ||= view.to_path if view.respond_to?(:to_path)
-    path ||= view.to_s    # even more permissive than :to_str here
+  def path_as_string(arg)
+    path   = arg.path    if arg.respond_to?(:path)
+    path ||= arg.to_path if arg.respond_to?(:to_path)
+    path ||= arg.to_s    # even more permissive than :to_str here
     path  
   end
 }
 
+... which triggered this request for comments, and my proposal above.
+
 ## Conclusion
 
-I'm a bit lost now. Is there an agreement somewhere, in ruby core maybe? What do you think? Should we agree on a standard way to recognize paths? Which one?
+What do you think? Do we agree on this standard way to recognize paths? If no, why and what do you propose?
 
 In the long run, I would also be in favor of having a Path class inside ruby core itself. Not in the standard library, in the core. We use paths everywhere and everytime. I would vote for @{https://github.com/eregon/epath#path---a-path-manipulation-library}{Benoit Daloze's Path abstraction}, but that's not really important ;-)
