@@ -6,11 +6,11 @@ category: Ruby
 keywords: 
 - ruby
 ---
-In almost every ruby project, I end up manipulating paths in some way. If not in the application or the library itself, at least in the tests, for isolating fixtures for example. Paths are everywhere, everytime.
+In almost every ruby project, we end up manipulating paths in some way. If not in the application or the library itself, at least in the tests, for isolating fixtures for example. Paths are everywhere, everytime.
 
-In my opinion, ruby itself provides rather poor tools for manipulating paths: `File.join`, `File.dirname`, `File.extname`, etc. Also `Pathname`, that however belongs to the standard library, not to core. `Pathname` should probably be refactored and enhanced, and is not a very idomatic way to capture paths as far as I know. In the community, the idiomatic way to capture a path seems to be a String, period.
+In my opinion, ruby itself provides rather poor tools for manipulating paths: `File.join`, `File.dirname`, `File.extname`, etc. Also `Pathname`. But it belongs to the standard library, not to the core. In addition for some needed refactoring and enhancement, `Pathname` is not a very idomatic way to capture paths, as far as I know. In the community, the idiomatic way to capture a path seems to be a String, period.
 
-Well, the situation is a bit more complicated. Stuff could hopefully be slightly improved provided we have an agreement on how path are recognized. This post is thus a request for comments about such an agreement!
+The situation is a bit more complicated. Stuff could hopefully be slightly improved provided that we have an agreement on how path are to be recognized. This post is thus a request for comments about such an agreement!
 
 ## A caller/callee contract...
 
@@ -29,14 +29,14 @@ To bring some order here, we must first distinguish between _building paths_ and
   end
 }
 
-At first glance, `Pathname` and the like are mostly tools for building paths. In the example above, how the path is built is the responsibility and secret of the _caller_. The latter may use the tool it wants for the job, provided it passes a path argument recognized by the _callee_. In other words, _caller_ and _callee_ must have an agreement on how `path` captures a path. When they are both in the same program or library, it is a matter of internal conventions. However, passing paths across gem boundaries is very common, so the agreement should be broader.
+At first glance, `Pathname` and the like are mostly tools for building paths. In the example above, the way to build the path is the secret of the _caller_. The latter may use the tool it wants for the job, provided it passes a `path` argument recognized by the _callee_. In other words, _caller_ and _callee_ must have an agreement on how `path` captures a Path at the logical level. When both are in the same program or library, it is a matter of internal developer conventions. However, as passing paths across gem boundaries is very common, an broader agreement should be found.
 
 Most callees expect a path to be passed as a String. This is not ideal, for at least two reasons:
 
-* It is not necessarily friendly. If the latter commonly works with `Pathname`, it must take great care of always calling `:to_s` before passing paths to the outside world.
+* It is not necessarily friendly. If the caller works with `Pathname`, it must take great care of always calling `:to_s` before passing paths to the outside world.
 * It tends to restrict APIs in situations where String must be logically distinguished from Path (see the Citrus example in next section, for example).
 
-Nicer conventions are in used here and there, but no real agreement seems to emerge, at least not one that I'm really aware of. Let look at different examples.
+Nicer conventions are in used here and there, but no real agreement seems to exist, at least not one that I'm aware of. Let look at different examples I've found recently.
 
 ## Different conventions in use
 
@@ -103,6 +103,6 @@ More recently, in a pull request to @{https://github.com/sinatra/sinatra}{Sinatr
 
 ## Conclusion
 
-I'm a bit lost now. Is there an agreement somewhere, in ruby core maybe? What do you think? Should we agree on some standard way to recognize paths? Which one? 
+I'm a bit lost now. Is there an agreement somewhere, in ruby core maybe? What do you think? Should we agree on a standard way to recognize paths? Which one?
 
 In the long run, I would also be in favor of having a Path class inside ruby core itself. Not in the standard library, in the core. We use paths everywhere and everytime. I would vote for @{https://github.com/eregon/epath#path---a-path-manipulation-library}{Benoit Daloze's Path abstraction}, but that's not really important ;-)
