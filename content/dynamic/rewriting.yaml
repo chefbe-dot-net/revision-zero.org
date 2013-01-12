@@ -24,6 +24,9 @@ redirect:
     - from: /no-silver-bullet-in-database-management
       to: /nosql-is-no-silver-bullet
       status: 301
+    - from: /rails-vulenarbilities-are-not-rails
+      to: /rails-vulnerabilities-are-not-rails
+      status: 301
 removed:
     - /404
     - /book
