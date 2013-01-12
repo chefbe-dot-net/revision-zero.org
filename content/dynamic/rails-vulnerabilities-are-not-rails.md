@@ -11,7 +11,7 @@ keywords:
 - data serialization
 ---
 
-TL;DR; Rails has demonstrated that YAML is an unsafe serialization format, at least in some environments such a Ruby. That's odd because it was one of the richest available serialization formats (sic), allowing to pass type-rich (say) and structured data between distributed software modules. Much richer than URL-encoded and XML at least. In 2014, JSON will remain the only decent alternative, ... that does not support times and dates, though.
+TL;DR; Rails has demonstrated that YAML is an unsafe serialization format, at least in some environments such a Ruby. That's odd because it was one of the richest available serialization formats (sic), allowing to pass type-rich (say) and structured data between distributed software modules. Much richer than URL-encoded and XML at least. In 2013, JSON will remain the only decent alternative, ... that does not support times and dates, though.
 
 The Ruby on Rails community just wakes up from a security nightmare. Two security issues have been discovered recently, namely @{https://groups.google.com/group/rubyonrails-security/browse_thread/thread/b75585bae4326af2}{CVE-2013-0155} and @{https://groups.google.com/group/rubyonrails-security/browse_thread/thread/eb56e482f9d21934}{CVE-2013-0156}. They are considered critical because they "allow attackers to bypass authentication systems, inject arbitrary SQL, inject and execute arbitrary code, or perform a DoS attack on a Rails application".
 
