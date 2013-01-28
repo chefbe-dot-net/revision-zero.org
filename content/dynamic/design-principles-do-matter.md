@@ -91,10 +91,10 @@ If you're currently engaged in a software development team but failure is not an
 
 Last but not least, if your own failures are not enough to learn, simply take mine as good counter examples.
 
-> `Itchy` is a data component. Well, it is *almost* a data component since it also encapsulates a job queue because, you know, we needed a job queue and we already had a deployment infrastructure for `Itchy` so we decided to put the job queue there as well. But expect for the job queue, `Itchy` is a data component. Its role is to export and import data.
+> `Itchy` is a data component. Well, it is *almost* a data component since it also encapsulates a job queue because, you know, we needed a job queue and we already had a deployment infrastructure for `Itchy` so we decided to put the job queue there as well. But except for the job queue, `Itchy` is a data component. Its role is to export and import data.
 
 > `Itchy`'s version is currently 1.3.2. However, that version number must be used with care by the development team. I mean, a subset of `Itchy`'s API change often in an backward incompatible way without increasing the major version number. It's not a big deal in practice because we know that these services are only used by `Scratchy`; `Itchy`'s changes on this API subset are actually *driven* by `Scratchy`'s changes. No broken behavior should normally occur, except maybe if `Scratchy`'s javascript is kept in cache. That should not happen in principle given Apache's configuration; even it if did happen, it would only affect the software's administrators (who use `Scratchy`), and we can tell them to refresh their browser, unlike the users of the `Poochie` component that uses the other services.
 
 > Speaking of `Poochie`, we probably made an odd decision a while back that leaks here and there. For now, data exported by `Itchy` is tagged with a `deleted` attribute that only makes sense for `Poochie`. We've implemented a filter in `Scratchy` to ignore data tagged as `deleted` and told the administrators to ignore such data if it shows up anyway.
 
-> I don't know exactly how `Krusty` handles the `deleted` stuff. Anyway, we plan to precisely document which of `Itchy`'s services are exactly used by who. It would at least allow us to avoid messing with the version number.
+> I don't know exactly how `Krusty` handles the `deleted` stuff. Anyway, we plan to precisely document which of `Itchy`'s services are exactly used by who. It would at least allow us to avoid messing with `Itchy`'s version number.
