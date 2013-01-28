@@ -37,15 +37,15 @@ Good design does matter. Design principles do matter. Requirements analysis does
 
 ## It's all about principles
 
-Do you know why principles exist in the first place? Because we are imperfect. We fail at thinking clearly most of the time. We fail at creating bug-free softwares. We fail at modifying them without making them worse. We fail at almost everything in this live and this is why we state principles. To help us avoiding failures when possible, and accepting them pacefully the rest of the time.
+Do you know why principles exist in the first place? Because we are imperfect. We fail at thinking clearly most of the time. We fail at creating bug-free softwares. We fail at modifying them without making them worse. We fail at almost everything in this life and this is why we state principles. To help us avoiding failures when possible, and accepting them peacefully the rest of the time.
 
-It probably looks arrogant, isn't? (stay tuned, I will do worse in a minute). In certain circles, agile advocates also are judged arrogant. In my opinion, there is a slight contradiction hidden here: we are arrogant but in a humble way (sic).
+It probably looks arrogant, doesn't it? (stay tuned, I will do worse in a minute). In certain circles, agile advocates also are judged arrogant. In my opinion, there is a slight contradiction hidden here: we are arrogant but in a humble way (sic).
 
 Take test-driven development. This is probably the most known of all agile techniques and principles. Those arrogant consultants will tell you: 
 
 > \- 100% coverage, bastards, otherwise you're not agile!
 
-Maybe you didn't notice yet. Test-driven development has a very humble foundation. Those that @{http://blog.8thlight.com/uncle-bob/2012/01/11/Flipping-the-Bit.html}{flipped the bit} recognize that they commonly fail at implementing bug-free features. They accept that they **need** tests. They know that their coverage is not sufficient, but they pacefully accept it. This is humble, not arrogant (and yet that sentence is of uttermost arrogance).
+Maybe you haven't notice yet. Test-driven development has a very humble foundation. Those that @{http://blog.8thlight.com/uncle-bob/2012/01/11/Flipping-the-Bit.html}{flipped the bit} recognize that they commonly fail at implementing bug-free features. They accept that they **need** tests. They know that their coverage is not sufficient, but they accept it peacefully. This is humble, not arrogant (and yet that sentence is of uttermost arrogance).
 
 ## Design principles do matter
 
@@ -55,9 +55,9 @@ My story above is about *weak coupling*. This post about software design princip
 
 > Weak coupling, cohesion, logical vs. physical, conceptual integrity, information hiding, data integrity, versioning policy, soundness, separation of concerns, data independence, maintainability, specification vs. implementation, simplicity, public vs. private, black-boxes, robustness, thread-safety, precision, controlled redundancy, reusability...
 
-All those principles matter. All of them help you avoiding failures when possible, and accepting them pacefully the rest of the time.
+All those principles matter. All of them help you avoiding failures when possible, and accepting them peacefully the rest of the time.
 
-I will make a favor here: you may reject those principles (even data integrity, I swear), but you may not *ignore* them. You MUST know them, all of them. And then, you'll have the opportunity to reject them in specific situations. Don't get it wrong. When the time comes for one of your software components to actively reject a design principle, let the component announce it clearly and loudly:
+I will do a favor here: you may reject those principles (even data integrity, I swear), but you may not *ignore* them. You MUST know them, all of them. And then, you'll have the opportunity to reject them in specific situations. Don't get it wrong. When the time comes for one of your software components to actively reject a design principle, let the component announce it clearly and loudly:
 
 > This method is **NOT** robust. Please check its preconditions.
 
@@ -71,7 +71,7 @@ If rejection is your choice, this is probably the best you can do, but be prepar
 
 ## What if you don't know them?
 
-Maybe you simply don't know about requirements principles, about design principles, about data management principles. Most developers simply don't. I must confess having a serious lack of knowledge about good UI principles, about security principles, about human management principles, etc., etc., etc. We can't know everything and that's fortunate. Most of the time, lack of knowledge also allows us to pacefully ignore our failures. @{http://harthur.wordpress.com/2013/01/24/771/}{Until someone that knows arrogantly comments}. 
+Maybe you simply don't know about requirements principles, about design principles, about data management principles. Most developers simply don't. I must confess having a serious lack of knowledge about good UI principles, about security principles, about human management principles, etc., etc., etc. We can't know everything and that's fortunate. Most of the time, lack of knowledge also allows us to peacefully ignore our failures. @{http://harthur.wordpress.com/2013/01/24/771/}{Until someone that knows arrogantly comments}.
 
 So what if you fail without even knowing it? What if, for example, certain forms of coupling are too subtle for object-oriented tips and tricks to effectively work. What if in the real world the @{http://en.wikipedia.org/wiki/Law_of_Demeter}{Law of Demeter} and @{http://en.wikipedia.org/wiki/Single_responsibility_principle}{Single responsibility principle} give absolutely no guarantee?
 
