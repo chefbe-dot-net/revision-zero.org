@@ -2,7 +2,7 @@
 title: Software Reuse, in theory
 short: Software Reuse, in theory
 date: 2011-01-18 16:53:00 +01:00
-category: Architecture
+category: Software engineering
 keywords: 
 - reuse
 - software reuse

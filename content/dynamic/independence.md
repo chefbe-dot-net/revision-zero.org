@@ -2,7 +2,7 @@
 title: About independence in computer science
 short: Independence ?
 date: 2010-02-07 16:10:00 +01:00
-category: Architecture
+category: Software engineering
 keywords: 
 - independence
 - coupling
