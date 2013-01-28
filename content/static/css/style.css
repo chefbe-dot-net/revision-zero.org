@@ -1,6 +1,6 @@
 body {
   font-family: corbel, 'lucida grande', helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   color: #212122;
   margin: auto;
   padding: 30px 50px;
@@ -14,20 +14,38 @@ h1 {
   margin-bottom: 20px;
   color: #3B8FE9;
 }
-#writings h1 {
+nav {
+  font-size: 18px;
+}
+nav h1 {
   color: #E00000;
+}
+nav h2 {
+  font-size: 18px;
+}
+nav ul li {
+  padding-top: 4px;
 }
 article {
   text-align: justify;
-  font-size: 18px;
+  font-size: 22px;
+  line-height: 1.62em;
+  vertical-align: baseline;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+}
+article ul li,
+article blockquote,
+article blockquote p {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
 }
 article h2 {
   padding-top: 20px;
-  font-size: 20px;
 }
 article h3 {
   padding-top: 15px;
-  font-size: 16px;
 }
 article h2 a,
 article h2 a:visited,
@@ -94,7 +112,8 @@ article table tr td {
   text-align: justify;
 }
 article blockquote {
-  font-size: 18px;
+  color: inherit;
+  font-family: inherit;
   text-align: justify;
   padding: 0px 80px;
   font-style: italic;
@@ -107,14 +126,18 @@ article blockquote code {
   background-color: white;
   border: none;
 }
+article blockquote p {
+  font-size: 21px;
+  line-height: 1.55em;
+}
 article .highlight pre {
   padding: 10px;
   margin: 20px;
   background: #111111;
-  font-size: 13px;
+  font-size: 16px;
   color: white;
   overflow: hidden;
-  line-height: 15px;
+  line-height: 20px;
 }
 #leave-a-comment {
   width: 590px;

@@ -5,10 +5,11 @@
 @padding:       15px;
 @form-width:    @middle-width - 2*@padding - 100px;
 @header-height: 90px;
+@fsize:         22px;
 
 body{
   font-family: corbel, 'lucida grande', helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   color: #212122;
   margin: auto;
   padding: 30px 50px; }
@@ -22,20 +23,30 @@ h1{
   color: #3B8FE9; 
 }
 
-#writings {
+nav {
+  font-size: 18px;
   h1 { color: #E00000; }
+  h2 { font-size: 18px; }
+  ul li { padding-top: 4px; }
 }
 
 article { 
   text-align: justify;
-  font-size: 18px;
+  font-size: @fsize;
+  line-height: 1.62em;
+  vertical-align: baseline;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+
+  ul li, blockquote, blockquote p {
+    font-size: inherit; 
+    font-family: inherit;
+    line-height: inherit; }
 
   h2 { 
-    padding-top: 20px;
-    font-size: 20px; }
+    padding-top: 20px; }
   h3 {
-    padding-top: 15px;
-    font-size: 16px; }
+    padding-top: 15px; }
   h2 a, h2 a:visited, h3 a,  h3 a:visited {
     color: #212122; text-decoration: none; }
   h2 a:hover, h3 a:hover {
@@ -60,7 +71,8 @@ article {
   table tr td { vertical-align: top; text-align: justify;}
 
   blockquote {
-    font-size: 18px;
+    color: inherit;
+    font-family: inherit;
     text-align: justify;
     padding: 0px 80px;
     font-style: italic;
@@ -71,16 +83,21 @@ article {
       white-space: nowrap;
       background-color: white;
       border: none;
-    }}
+    }
+    p {
+      font-size: @fsize - 1px;
+      line-height: 1.55em;
+    }
+  }
 
   .highlight pre {
     padding: 10px;
     margin: 20px;
     background: #111111;
-    font-size: 13px;
+    font-size: 16px;
     color: white;
     overflow: hidden; 
-    line-height: 15px; }
+    line-height: 20px; }
 }
 
 #leave-a-comment {

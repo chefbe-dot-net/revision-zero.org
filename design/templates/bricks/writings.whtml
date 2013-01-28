@@ -1,7 +1,7 @@
 <nav id="writings">
   <h1>Revision-Zero</h1>
   *{categories as c}{
-    <span class="category-label">${c}</span>
+    <h2>${c}</h2>
     <ul>
       *{writings.select{|w| w.category == c}.reverse as w}{
         <li class="?{w.__path__ == __path__}{current}{normal}">
