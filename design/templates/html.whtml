@@ -14,7 +14,10 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight.css">
 
 <script src="/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
@@ -26,6 +29,7 @@
 <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.6.4.min.js"><\/script>')</script>
 
 <script defer src="/js/libs/websync-tools-0.0.1.js"></script>
+<script defer src="/js/libs/bootstrap.min.js"></script>
 <script defer src="/js/script.js"></script>
 
 ?{environment == :production}{

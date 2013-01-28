@@ -1,12 +1,10 @@
-<div id="wrap">
-<<+{header.whtml share all}
-  <div id="contentt">
-    <div class="left">
-<<+{writings.whtml share all}
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <<+{writings.whtml share all}
     </div>
-    <div class="middle">
-<<+{article.whtml share all}
+    <div class="span9">
+      <<+{article.whtml share all}
     </div>
-    <div style="clear: both;"></div>
   </div>
 </div>
