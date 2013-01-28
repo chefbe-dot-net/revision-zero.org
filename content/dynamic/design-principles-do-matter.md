@@ -25,7 +25,7 @@ Suddently, I've heard probably the worst argument ever about how to react to cha
 
 You know what? The guy is right, their business is unclear and their requirements change all the time. They don't care about (certain) APIs being unstable. They will certainly change them either way. Fine.
 
-I really start wondering if this is not a consequence of agile methods being ill-understood by most. Kent Beck convinced you all, isn't? *Requirements change all the time*. He is true. This is **not** an excuse for avoiding requirements analysis completely, this is **not** an excuse for skipping good design, this is **not** an excuse for building shit, damned!
+I really start wondering if this is not a consequence of agile methods being ill-understood by most. Kent Beck convinced you all, didn't he? *Requirements change all the time*. He is true. This is **not** an excuse for avoiding requirements analysis completely, this is **not** an excuse for skipping good design, this is **not** an excuse for building shit, damned!
 
 Your business is unclear? Make it clearer. Your requirements change all the time? Write them anyway. Your APIs change often? Stabilize them. Your process is a mess? Fix it, now.
 
