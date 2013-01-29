@@ -3,7 +3,7 @@ body {
   font-size: 20px;
   color: #212122;
   margin: auto;
-  padding: 30px 50px;
+  padding: 30px 70px;
 }
 a:hover {
   cursor: pointer;
@@ -27,9 +27,8 @@ nav ul li {
   padding-top: 4px;
 }
 article {
-  text-align: justify;
-  font-size: 22px;
-  line-height: 1.62em;
+  font-size: 18px;
+  line-height: 1.55em;
   vertical-align: baseline;
   font-family: "Open Sans", sans-serif;
   color: #333;
@@ -83,7 +82,7 @@ article ul,
 article ol,
 article pre,
 article table {
-  padding: 15px 0px 0px 0px;
+  padding: 5px 0px 0px 0px;
 }
 article ul,
 article ol {
@@ -109,12 +108,10 @@ article table tr td {
 }
 article table tr td {
   vertical-align: top;
-  text-align: justify;
 }
 article blockquote {
   color: inherit;
   font-family: inherit;
-  text-align: justify;
   padding: 0px 80px;
   font-style: italic;
   border: none;
@@ -125,9 +122,12 @@ article blockquote code {
   white-space: nowrap;
   background-color: white;
   border: none;
+  font-size: 17px;
+  font-family: inherit;
+  font-style: normal;
 }
 article blockquote p {
-  font-size: 21px;
+  font-size: 17px;
   line-height: 1.55em;
 }
 article .highlight pre {

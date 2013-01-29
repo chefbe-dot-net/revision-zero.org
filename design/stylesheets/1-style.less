@@ -5,14 +5,15 @@
 @padding:       15px;
 @form-width:    @middle-width - 2*@padding - 100px;
 @header-height: 90px;
-@fsize:         22px;
+@fsize:         18px;
+@lheight:       1.55em;
 
 body{
   font-family: corbel, 'lucida grande', helvetica, sans-serif;
   font-size: 20px;
   color: #212122;
   margin: auto;
-  padding: 30px 50px; }
+  padding: 30px 70px; }
 a:hover { 
   cursor: pointer; }
 
@@ -31,9 +32,8 @@ nav {
 }
 
 article { 
-  text-align: justify;
   font-size: @fsize;
-  line-height: 1.62em;
+  line-height: @lheight;
   vertical-align: baseline;
   font-family: "Open Sans", sans-serif;
   color: #333;
@@ -60,7 +60,7 @@ article {
   }
 
   img { display:block; margin:auto; padding: 25px 0px; text-align: center; }
-  p, ul, ol, pre, table { padding: 15px 0px 0px 0px;}
+  p, ul, ol, pre, table { padding: 5px 0px 0px 0px;}
   ul, ol { padding-left: 45px;}
   ul li, ol li { padding-top: 5px; }
   a, a:visited { color: #A30600; text-decoration: none; }
@@ -68,12 +68,11 @@ article {
 
   table {padding-left: 20px;}
   table tr td {padding: 3px 10px 3px 0px;}
-  table tr td { vertical-align: top; text-align: justify;}
+  table tr td { vertical-align: top; }
 
   blockquote {
     color: inherit;
     font-family: inherit;
-    text-align: justify;
     padding: 0px 80px;
     font-style: italic;
     border: none; 
@@ -83,10 +82,13 @@ article {
       white-space: nowrap;
       background-color: white;
       border: none;
+      font-size: @fsize - 1px;
+      font-family: inherit;
+      font-style: normal;
     }
     p {
       font-size: @fsize - 1px;
-      line-height: 1.55em;
+      line-height: @lheight;
     }
   }
 
