@@ -5,110 +5,99 @@ body {
   margin: auto;
   padding: 30px 70px;
 }
-a:hover {
-  cursor: pointer;
-}
+a:hover { cursor: pointer; }
 h1 {
   font-size: 40px;
   text-align: left;
   margin-bottom: 20px;
-  color: #3B8FE9;
+  color: #3b8fe9;
 }
-nav {
-  font-size: 18px;
-}
-nav h1 {
-  color: #E00000;
-}
-nav h2 {
-  font-size: 18px;
-}
-nav ul li {
-  padding-top: 4px;
-}
+nav { font-size: 18px; }
+nav h1 { color: #e00000; }
+nav h2 { font-size: 18px; }
+nav ul li { padding-top: 4px; }
 article {
   font-size: 18px;
   line-height: 1.55em;
   vertical-align: baseline;
   font-family: "Open Sans", sans-serif;
-  color: #333;
+  color: #333333;
 }
-article ul li,
-article blockquote,
+article ul li {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+article blockquote {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
 article blockquote p {
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
 }
-article h2 {
-  padding-top: 20px;
+article h2 { padding-top: 20px; }
+article h3 { padding-top: 15px; }
+article h2 a {
+  color: #212122;
+  text-decoration: none;
 }
-article h3 {
-  padding-top: 15px;
+article h2 a:visited {
+  color: #212122;
+  text-decoration: none;
 }
-article h2 a,
-article h2 a:visited,
-article h3 a,
+article h3 a {
+  color: #212122;
+  text-decoration: none;
+}
 article h3 a:visited {
   color: #212122;
   text-decoration: none;
 }
-article h2 a:hover,
-article h3 a:hover {
-  color: #A30600;
+article h2 a:hover {
+  color: #a30600;
   text-decoration: underline;
 }
-article header .date {
-  font-weight: bold;
+article h3 a:hover {
+  color: #a30600;
+  text-decoration: underline;
 }
-article header img,
-article header iframe {
-  display: inline;
-}
-article header h1 {
-  margin-bottom: 20px;
-}
-article header .twitter {
-  text-align: right;
-}
+article header .date { font-weight: bold; }
+article header img { display: inline; }
+article header iframe { display: inline; }
+article header h1 { margin-bottom: 20px; }
+article header .twitter { text-align: right; }
 article img {
   display: block;
   margin: auto;
   padding: 25px 0px;
   text-align: center;
 }
-article p,
-article ul,
-article ol,
-article pre,
-article table {
-  padding: 5px 0px 0px 0px;
-}
-article ul,
-article ol {
-  padding-left: 45px;
-}
-article ul li,
-article ol li {
-  padding-top: 5px;
-}
-article a,
-article a:visited {
-  color: #A30600;
+article p { padding: 5px 0px 0px 0px; }
+article ul { padding: 5px 0px 0px 0px; }
+article ol { padding: 5px 0px 0px 0px; }
+article pre { padding: 5px 0px 0px 0px; }
+article table { padding: 5px 0px 0px 0px; }
+article ul { padding-left: 45px; }
+article ol { padding-left: 45px; }
+article ul li { padding-top: 5px; }
+article ol li { padding-top: 5px; }
+article a {
+  color: #a30600;
   text-decoration: none;
 }
-article a:hover {
-  text-decoration: underline;
+article a:visited {
+  color: #a30600;
+  text-decoration: none;
 }
-article table {
-  padding-left: 20px;
-}
-article table tr td {
-  padding: 3px 10px 3px 0px;
-}
-article table tr td {
-  vertical-align: top;
-}
+article a:hover { text-decoration: underline; }
+article table { padding-left: 20px; }
+article table tr td { padding: 3px 10px 3px 0px; }
+article table tr td { vertical-align: top; }
+article code { font-size: 17px; }
+article pre { font-size: 17px; }
 article blockquote {
   color: inherit;
   font-family: inherit;
@@ -143,13 +132,22 @@ article .highlight pre {
   width: 590px;
   margin: auto;
 }
-#leave-a-comment label,
-#leave-a-comment input,
+#leave-a-comment label {
+  display: block;
+  padding: 2px;
+}
+#leave-a-comment input {
+  display: block;
+  padding: 2px;
+}
 #leave-a-comment textarea {
   display: block;
   padding: 2px;
 }
-#leave-a-comment input,
+#leave-a-comment input {
+  margin-left: 25px;
+  width: 575px;
+}
 #leave-a-comment textarea {
   margin-left: 25px;
   width: 575px;
@@ -158,9 +156,7 @@ article .highlight pre {
   margin-top: 10px;
   margin-bottom: 5px;
 }
-#leave-a-comment textarea {
-  height: 200px;
-}
+#leave-a-comment textarea { height: 200px; }
 #leave-a-comment .button {
   margin-top: 10px;
   width: 100px;
@@ -181,6 +177,4 @@ article .highlight pre {
   margin-left: 15px;
   display: block;
 }
-#leave-a-comment .feedback p.ko {
-  color: red;
-}
+#leave-a-comment .feedback p.ko { color: red; }
