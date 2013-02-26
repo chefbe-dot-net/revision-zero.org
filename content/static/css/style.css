@@ -96,8 +96,8 @@ article a:hover { text-decoration: underline; }
 article table { padding-left: 20px; }
 article table tr td { padding: 3px 10px 3px 0px; }
 article table tr td { vertical-align: top; }
-article code { font-size: 17px; }
-article pre { font-size: 17px; }
+article code { font-size: 16px; }
+article pre { font-size: 16px; }
 article blockquote {
   color: inherit;
   font-family: inherit;
