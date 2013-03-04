@@ -38,6 +38,9 @@ article blockquote p {
   font-family: inherit;
   line-height: inherit;
 }
+article blockquote em {
+  font-style: normal;
+}
 article h2 { padding-top: 20px; }
 article h3 { padding-top: 15px; }
 article h2 a {
