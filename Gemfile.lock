@@ -1,64 +1,40 @@
-GIT
-  remote: git://github.com/blambeau/grit.git
-  revision: 099fed8c32ffe910836abbabc9a6997de55e5783
-  specs:
-    grit (2.4.1)
-      diff-lcs (~> 1.1)
-      mime-types (~> 1.15)
-      posix-spawn (~> 0.3.6)
-
-GIT
-  remote: git://github.com/blambeau/websync.git
-  revision: 12b5c925e0f7d380415b700f2c715bd3e58eb47d
-  specs:
-    websync (0.0.1)
-      grit (~> 2.4.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
-    addressable (2.2.8)
     albino (1.3.3)
       posix-spawn (>= 0.3.6)
-    daemons (1.1.9)
-    diff-lcs (1.2.0)
+    concurrent-ruby (1.0.5)
     epath (0.2.0)
-    eventmachine (1.0.0)
-    http (0.0.2)
-    i18n (0.6.1)
-    json (1.7.6)
-    launchy (2.0.5)
-      addressable (~> 2.2.6)
+    i18n (1.0.0)
+      concurrent-ruby (~> 1.0)
+    json (2.1.0)
     mail (2.3.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.20.1)
-    polyglot (0.3.3)
-    polygon (0.0.1)
+    mime-types (1.25.1)
+    minitest (5.11.3)
+    path (2.0.1)
+    polyglot (0.3.5)
+    polygon (0.0.3)
       epath (~> 0.2.0)
       json
       sinatra (~> 1.3)
       wlang (~> 0.10.2)
-    posix-spawn (0.3.6)
-    quickl (0.4.3)
-    rack (1.5.2)
-    rack-protection (1.3.2)
+    posix-spawn (0.3.13)
+    rack (1.6.9)
+    rack-protection (1.5.5)
       rack
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
-    rake (0.9.6)
+    rake (12.3.0)
     redcarpet (2.0.1)
-    sinatra (1.3.4)
+    sinatra (1.3.6)
       rack (~> 1.4)
       rack-protection (~> 1.3)
       tilt (~> 1.3, >= 1.3.3)
-    thin (1.3.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
-    tilt (1.3.3)
-    treetop (1.4.12)
+    tilt (1.4.1)
+    treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     wlang (0.10.2)
@@ -68,19 +44,15 @@ PLATFORMS
 
 DEPENDENCIES
   albino (~> 1.3.3)
-  epath (~> 0.2.0)
-  eventmachine (~> 1.0.0.beta.4)
-  grit!
-  http (~> 0.0.1)
-  json
-  launchy (~> 2.0.5)
   mail (~> 2.3.0)
-  polygon (~> 0.0.1)
-  quickl (~> 0.4.2)
+  minitest
+  path (~> 2.0)
+  polygon (~> 0.0.3)
   rack-test (~> 0.6.1)
-  rake (~> 0.9.2)
+  rake
   redcarpet (~> 2.0.1)
   sinatra (~> 1.3.0)
-  thin (~> 1.3.1)
-  websync!
   wlang (~> 0.10.2)
+
+BUNDLED WITH
+   1.16.0

@@ -1,4 +1,5 @@
 .git
-/vendor/bundle
-/tmp
-/logs
+.bundle
+vendor/bundle
+tmp
+logs

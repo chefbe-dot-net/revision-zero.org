@@ -1,21 +1,23 @@
-FROM phusion/passenger-ruby18
+FROM phusion/passenger-ruby23
 
 WORKDIR /home/app
 ENV HOME /home/app
 
 RUN apt-get update; \
-    apt-get install --force-yes -y libxml2 libxml2-dev libxslt1-dev libxslt1.1
+    apt-get install --force-yes -y python-pygments && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    rm /etc/nginx/sites-enabled/default && \
+    rm -f /etc/service/nginx/down
+
+COPY Gemfile Gemfile.lock /home/app/
+RUN  bundle install --without development
 
 COPY . /home/app
 COPY ./config/webapp.conf /etc/nginx/sites-enabled/webapp.conf
 
 RUN mkdir -p $HOME/logs && \
     mkdir -p $HOME/tmp && \
-    bundle install --without development && \
-    chown app.app $HOME -R && \
-    rm /etc/nginx/sites-enabled/default && \
-    rm -f /etc/service/nginx/down && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    chown app.app $HOME -R
 
 CMD ["/sbin/my_init"]

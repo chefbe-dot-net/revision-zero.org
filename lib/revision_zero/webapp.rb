@@ -2,6 +2,8 @@ module RevisionZero
   class WebApp < Polygon::Base
     helpers RevisionZero::Helpers
 
+    use Rack::CacheControl
+
     ############################################################## Configuration
     configure do
       set :root, Path.backfind('.[config.ru]')
@@ -37,11 +39,13 @@ module RevisionZero
     ############################################################## Normal routes
 
     get "/" do
+      last_modified STARTED_AT
       url = writings.last["__url__"]
       redirect to(url)
     end
     
     get %r{^/(-?\d+)} do
+      last_modified STARTED_AT
       index = params[:captures].first.to_i
       pass unless writing = writings[index]
       content = url2content(writing["__url__"])
@@ -49,6 +53,7 @@ module RevisionZero
     end
 
     get %r{^/(.*)} do
+      last_modified STARTED_AT
       pass unless content = url2content(params[:captures].first)
       wlang :html, content
     end
@@ -76,6 +81,7 @@ module RevisionZero
       sender ||= "info@revision-zero.org"
       
       unless nick and comment and writing
+        status 400
         "ko"
       else
         Mail.deliver do

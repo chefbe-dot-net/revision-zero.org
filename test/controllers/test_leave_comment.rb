@@ -23,7 +23,7 @@ class LeaveCommentTest < Case
   def test_valid_request
     post "/leave-comment", @params
     assert_equal 200, status, "/leave-comment succeeds when everything is passed"
-    assert_not_nil mail = Mail::TestMailer.deliveries.first
+    assert (mail = Mail::TestMailer.deliveries.first) != nil
     assert_equal ["sender@mail.com"], mail.from
     assert_equal ["blambeau@gmail.com"], mail.to
     assert_equal "the sender's comment", mail.body.to_s
@@ -34,7 +34,7 @@ class LeaveCommentTest < Case
     @params.delete("mail")
     post "/leave-comment", @params
     assert_equal 200, status, "/leave-comment succeeds even if the mail is missing"
-    assert_not_nil mail = Mail::TestMailer.deliveries.first
+    assert (mail = Mail::TestMailer.deliveries.first) != nil
     assert_equal ["info@revision-zero.org"], mail.from
   end
   

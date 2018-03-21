@@ -1,3 +1,3 @@
-Dir.chdir("config") do
-  instance_eval File.read("production.ru")
-end
+$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+require 'revision_zero'
+run RevisionZero::WebApp

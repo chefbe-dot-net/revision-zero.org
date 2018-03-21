@@ -1,9 +1,7 @@
-Encoding.default_external = Encoding::UTF_8 if RUBY_VERSION > "1.9"
-ENV["RACK_ENV"] = "test"
 require 'revision_zero'
-require 'test/unit'
+require 'minitest/autorun'
 require 'rack/test'
-class Case < Test::Unit::TestCase
+class Case < Minitest::Test
   include Rack::Test::Methods
   include Polygon::Helpers
   include RevisionZero::Helpers

@@ -13,6 +13,8 @@ class IndexPageTest < Case
     follow_redirect!
     assert_equal 200, status, "Index page should respond"
     assert_match %r{text/html}, content_type, "Index should be text/html"
+    assert last_response['Cache-Control'] != nil
+    assert last_response['Last-Modified'] != nil
   end
 
   def test_stylesheets_should_respond

@@ -2,10 +2,16 @@ require 'yaml'
 require 'logger'
 require 'uri'
 
+require 'redcarpet'
+require 'epath'
+require 'albino'
+require 'mail'
 require 'polygon'
 require 'sinatra/base'
 
 module RevisionZero
+
+  STARTED_AT = Time.now
 
   def internal?(url)
     url && !(url =~ /^(https?|ftp|mailto):/) && !(url =~ /ajax.googleapis.com/)
@@ -28,9 +34,8 @@ module RevisionZero
   module_function :makelink
 
 end
-require 'revision_zero/loader'
 require 'revision_zero/ext/hash'
-require 'revision_zero/ext/nocache'
+require 'revision_zero/ext/cache_control'
 require 'revision_zero/ext/wlang'
 require 'revision_zero/helpers'
 require 'revision_zero/webapp'

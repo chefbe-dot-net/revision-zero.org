@@ -99,11 +99,15 @@ WLang::dialect("active-markdown") do
   end
   
   post_transform do |text|
-    @markdown ||= begin
-      opts = {:fenced_code_blocks => true}
-      Redcarpet::Markdown.new(HTMLwithAlbino, opts)
+    begin
+      @markdown ||= begin
+        opts = {:fenced_code_blocks => true}
+        Redcarpet::Markdown.new(HTMLwithAlbino, opts)
+      end
+      @markdown.render(text)
+    rescue
+      text
     end
-    @markdown.render(text)
   end
 
 end

@@ -7,7 +7,7 @@
 	    <link>http://www.revision-zero.org</link>
 	    *{writings[-5..-1].reverse as w}{
 	      <item>
-	          <title>${w.title}</title>
+	          <title>+{w.title}</title>
 	          <description>
 	            &{~{w.content}}
 	          </description>
